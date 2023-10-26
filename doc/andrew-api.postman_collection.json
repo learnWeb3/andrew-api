@@ -1,0 +1,2385 @@
+{
+	"info": {
+		"_postman_id": "bbcea36e-8ab8-4c45-a5ca-c4db834afa0f",
+		"name": "andrew-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13953520"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "customer",
+					"item": [
+						{
+							"name": "create an account as a user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDM2MjAxOTYsImlhdCI6MTcwMzU4NDE5NiwiYXV0aF90aW1lIjoxNzAzNTg0MTk2LCJqdGkiOiIxMTkwMjBkYi1hYmM4LTQ2MzAtODNlNC05ZjllNzNiYjg3ZjEiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNGJlM2QwYTctMjEyNC00NTU1LTkzMGYtNTRkNGVhZTE2OGE4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiZVpUcGdyYkdRMlFtIiwic2Vzc2lvbl9zdGF0ZSI6ImVhZGMwMWNlLTI0MDUtNGQ1Ni1iZTRlLTc4ZjhhMDI0NTU4MCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiLCJkZWZhdWx0LXVzZXItcm9sZXMiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZWFkYzAxY2UtMjQwNS00ZDU2LWJlNGUtNzhmOGEwMjQ1NTgwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIiwiZGVmYXVsdC11c2VyLXJvbGVzIl0sIm5hbWUiOiJtaWtlIGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6Im1pa2VAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoibWlrZSIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJtaWtlQHlvcG1haWwuY29tIn0.Le0cAgQhG0D4Pv-PejI2z-DMgb2y2Mi15vIYEkqssxk_xEOdXTUe454LariQ0fgZqHZnPsc2u32ZJe078Qs3ZglmlhFbRPfsoU7nwHiBwAuoBqBC-MBbL7CqAcTK2Jq-djD0ywiitqgtkKfeGBEAUmKYSZQak-2lgtfIxJkB6TVHe2vmv5f_uVQDRkW8Vf5Vbxms3pmypXdNpBvLU_U_3cKa8KUBxBUmFDWQCmZFQEsfBA5-La7u2rx_Y6swsMzehWIak7siYcKtwjT22J-tkPtczQfHHpqJ5WZreyk45I75PK9lD2CX30hhVb6NxI5CVe4d9loWFD2VyVs6ehAOTw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/customer",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"customer"
+									]
+								},
+								"description": "Role Restrictions:  \n\\- Required Role: user"
+							},
+							"response": [
+								{
+									"name": "create an account as a user",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/customer",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"customer"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "46"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2e-ZHjAzGbo8rW+8pnjQhm8yBbvLjo\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 13:19:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"82931c1b-109f-48d5-b30d-0e3df5110131\"\n}"
+								}
+							]
+						},
+						{
+							"name": "create a third party account as an insurer or admin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJnR2JNbElkWjVZS1hfYVd3NGIyckxDMjJOOXlGd054VGxRTW5qendPeVVRIn0.eyJleHAiOjE2OTg5Njc3NDAsImlhdCI6MTY5ODkzMTc0MCwiYXV0aF90aW1lIjoxNjk4OTMxNzQwLCJqdGkiOiI3MzlmNTIxYi04NTkxLTQwNDItYjBhNC02NWY1ODI5YTA5NjMiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNjVlOTEzM2UtMmE3YS00NzUwLThiZWEtZDFhMGFmMjU1NTI3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiVUFRVFIxRXhpQUVyIiwic2Vzc2lvbl9zdGF0ZSI6ImNhNDU0YWRkLTY1ZTItNGJiOS1hYzY3LTdkMTEwZGU1OWM4YSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiY2E0NTRhZGQtNjVlMi00YmI5LWFjNjctN2QxMTBkZTU5YzhhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.ehN0Su3pGoSBl1aDQFd3XX9rqkxnWSHVOgQxU721Qsp7DKfWtGoN0FHi8Fr8Iy95njJGmCtze9t_gr1n_ocJITirxQll1Pt1LnO6YkBQAdghba15Nqq8EnLGqf8MmInOmTOays_1VKkxufX_BYtijCEwclFj9CRjO6XgyzfBfJnviEVfa_giewV5OF5x9lccz4CJ7AZFZ9Tx6zMS8EGfjZpRTMFnTk2M1lYjTKgZH5DfU3sxN6b45ozrk-NEcWYQISabAp2oI7iHZtbAmUQWFc-DJQ-aQqMMr4yo0hLGWhjBdnpjfoftL_Slu1clSQGOI38muBTQPeix_-jbCJApuQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"pierrot@yopmail.com\",\n    \"firstName\": \"pierrot\",\n    \"lastName\": \"doe\",\n    \"insurer\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ROOT_URL}}/customer/account",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"customer",
+										"account"
+									]
+								},
+								"description": "Role Restrictions:  \n\\- Required Role: supervisor/insurer or superadmin"
+							},
+							"response": [
+								{
+									"name": "create a third party account as an insurer or admin",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"pierrot@yopmail.com\",\n    \"firstName\": \"pierrot\",\n    \"lastName\": \"doe\",\n    \"insurer\": true,\n    \"activated\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ROOT_URL}}/customer/account",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"customer",
+												"account"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "46"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2e-nhrt0nqXBtC9540WzP5cO9p7y4U\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 14:31:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"db44c3a8-1e6e-4524-82b8-ec3fbb30abad\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get contracts for a customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzc3MDMsImlhdCI6MTcwMjA0MTcwNCwiYXV0aF90aW1lIjoxNzAyMDQxNzAzLCJqdGkiOiJmZTAyNDM5Ny0zZmQwLTQzMjktYWJlNC1iMmE2N2I2ZTNhMTMiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNGJlM2QwYTctMjEyNC00NTU1LTkzMGYtNTRkNGVhZTE2OGE4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiQjlRRjVGVmpTaWhGIiwic2Vzc2lvbl9zdGF0ZSI6IjkwZmZjYjExLTRkNzMtNDlhZi1hNDMwLTVkNGI1NWI2ZWRmNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiLCJkZWZhdWx0LXVzZXItcm9sZXMiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiOTBmZmNiMTEtNGQ3My00OWFmLWE0MzAtNWQ0YjU1YjZlZGY3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIiwiZGVmYXVsdC11c2VyLXJvbGVzIl0sIm5hbWUiOiJtaWtlIGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6Im1pa2VAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoibWlrZSIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJtaWtlQHlvcG1haWwuY29tIn0.gdwfRBJxYH5ycwc0fjw31wkjxn_K9-LAu0TSNcmjvXAWGeSIYrXtjrOTSgsXOHxgas9UmV0zGENB1d9AeGkweojfrfF25FoMeFHXEnUVbyZcYHysNdQgPjfAtTGyQ6uV8tDt6w8kTPaNWkuZu0HX-0GcUfa704LvEW5FYQ7LX45GV0XkEDUQWdQT2AauD1rcM3CQ-Uw7IWXPYLzAVL-RoiZhv35-3jWrvEl3eN0Nb91jUYegL3qIZfFFIdkdUx81ObvVFz-OqGdGwfBAQ5FDjuSr-DPoT9KwIsE9ckwXSa1VMbpmzK7U67irTRPS4BFg--NkPUxFcbT_za156Wte9Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/customer/d4d6ed02-f792-4d62-9cb8-04120cba796d/contract",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"customer",
+										"d4d6ed02-f792-4d62-9cb8-04120cba796d",
+										"contract"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "get contracts for an inactivated customer",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/customer/d4d6ed02-f792-4d62-9cb8-04120cba796d/contract",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"customer",
+												"d4d6ed02-f792-4d62-9cb8-04120cba796d",
+												"contract"
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "80"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"50-NePo0gxamjIrLOaGizRANLFX2+c\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 13:25:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"user account must be activated\",\n    \"error\": \"Conflict\",\n    \"statusCode\": 409\n}"
+								},
+								{
+									"name": "get contracts for a customer",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/customer/d4d6ed02-f792-4d62-9cb8-04120cba796d/contract",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"customer",
+												"d4d6ed02-f792-4d62-9cb8-04120cba796d",
+												"contract"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "279"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"117-vN5gjE65Aunuvzs5PbTog08hmHc\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 13:29:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n            \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n            \"status\": \"INACTIVE\",\n            \"paymentDueDay\": 1,\n            \"createdAt\": \"2023-11-02T15:18:16.536Z\",\n            \"updatedAt\": \"2023-11-02T15:18:16.536Z\",\n            \"__v\": 0,\n            \"vehicles\": []\n        }\n    ],\n    \"count\": 1,\n    \"start\": 0,\n    \"limit\": 10\n}"
+								}
+							]
+						},
+						{
+							"name": "get all customers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwMDE0MjAsImlhdCI6MTcwMTk2NTQyMCwiYXV0aF90aW1lIjoxNzAxOTY1NDIwLCJqdGkiOiIwNmVhOGJkYy1lMWE0LTRiMGItOWE0NS04NWVkYmZhZjZhNzgiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiRHl3M2pBcTlBYTIwIiwic2Vzc2lvbl9zdGF0ZSI6ImM4NDBkYmQ0LWQ1MDktNDA3OS05MThjLTg5MjIwNjQ4OTI1MSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiYzg0MGRiZDQtZDUwOS00MDc5LTkxOGMtODkyMjA2NDg5MjUxIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.pQxQ29G0FQdBzEFT3v8cjiMgnz9VkFv7uBYhCR2XXBVJRsLYpD6mOJpNPTj0i3VBnaQ2Lh3ROs7cTNXLXuTJiy7rzjrj0GnRL6MUzBi0DelYhhigrLxLJ2KF2G0ZQTBvgF7hypxTYeCJXzRzUkO82uNdmbhMocDfZ2SxlHF_PAh5MofdjP6nZ9ENjuHTw0Wgb0Uo_8MSKtN3NckMRx7-8VCf6Hr1CnzT00kQTpeAMbGfTc-MfAyr4UC6U9goV8BpUDfWMaHDMieKZiJcS6e6MeKe_bCcsXoPxY87RCnLI1XO8cpWd77BymA_hs5xko7RT3qyo86UXo86IB9N56YegA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/customer?value=lk",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"customer"
+									],
+									"query": [
+										{
+											"key": "value",
+											"value": "lk"
+										}
+									]
+								},
+								"description": "Role Restrictions:  \n\\- Required Role: supervisor/insurer or superadmin"
+							},
+							"response": [
+								{
+									"name": "get all customers",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/customer",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"customer"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "655"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"28f-fmDKNZ3QHH4MZhyzXk7j8cmV0Rs\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 15:13:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"db44c3a8-1e6e-4524-82b8-ec3fbb30abad\",\n            \"insurer\": true,\n            \"status\": \"INACTIVE\",\n            \"authorizationServerUserId\": \"480732c1-9ec9-4749-8943-2e5b3cb597df\",\n            \"contactInformations\": {\n                \"email\": \"pierrot@yopmail.com\"\n            },\n            \"activated\": true,\n            \"createdAt\": \"2023-11-02T14:31:55.870Z\",\n            \"updatedAt\": \"2023-11-02T14:31:55.870Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n            \"insurer\": false,\n            \"status\": \"INACTIVE\",\n            \"authorizationServerUserId\": \"a9611df1-e4d3-4c9c-99da-40e9791e9d26\",\n            \"contactInformations\": {\n                \"email\": \"mike@yopmail.com\"\n            },\n            \"activated\": false,\n            \"createdAt\": \"2023-11-02T13:24:40.667Z\",\n            \"updatedAt\": \"2023-11-02T13:24:40.667Z\",\n            \"__v\": 0\n        }\n    ],\n    \"count\": 2,\n    \"limit\": 10,\n    \"start\": 0\n}"
+								},
+								{
+									"name": "get all customers with search filters",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/customer?value=does-not-exists",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"customer"
+											],
+											"query": [
+												{
+													"key": "value",
+													"value": "does-not-exists"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2d-rTSMt07EeuWShO6uaRJZ2IEFZ/8\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 13:40:29 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [],\n    \"count\": 0,\n    \"start\": 0,\n    \"limit\": 10\n}"
+								}
+							]
+						},
+						{
+							"name": "find one customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzc3MDMsImlhdCI6MTcwMjA0MTcwNCwiYXV0aF90aW1lIjoxNzAyMDQxNzAzLCJqdGkiOiJmZTAyNDM5Ny0zZmQwLTQzMjktYWJlNC1iMmE2N2I2ZTNhMTMiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNGJlM2QwYTctMjEyNC00NTU1LTkzMGYtNTRkNGVhZTE2OGE4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiQjlRRjVGVmpTaWhGIiwic2Vzc2lvbl9zdGF0ZSI6IjkwZmZjYjExLTRkNzMtNDlhZi1hNDMwLTVkNGI1NWI2ZWRmNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiLCJkZWZhdWx0LXVzZXItcm9sZXMiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiOTBmZmNiMTEtNGQ3My00OWFmLWE0MzAtNWQ0YjU1YjZlZGY3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIiwiZGVmYXVsdC11c2VyLXJvbGVzIl0sIm5hbWUiOiJtaWtlIGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6Im1pa2VAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoibWlrZSIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJtaWtlQHlvcG1haWwuY29tIn0.gdwfRBJxYH5ycwc0fjw31wkjxn_K9-LAu0TSNcmjvXAWGeSIYrXtjrOTSgsXOHxgas9UmV0zGENB1d9AeGkweojfrfF25FoMeFHXEnUVbyZcYHysNdQgPjfAtTGyQ6uV8tDt6w8kTPaNWkuZu0HX-0GcUfa704LvEW5FYQ7LX45GV0XkEDUQWdQT2AauD1rcM3CQ-Uw7IWXPYLzAVL-RoiZhv35-3jWrvEl3eN0Nb91jUYegL3qIZfFFIdkdUx81ObvVFz-OqGdGwfBAQ5FDjuSr-DPoT9KwIsE9ckwXSa1VMbpmzK7U67irTRPS4BFg--NkPUxFcbT_za156Wte9Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/customer/d4d6ed02-f792-4d62-9cb8-04120cba796d",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"customer",
+										"d4d6ed02-f792-4d62-9cb8-04120cba796d"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "find one customer",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/customer/db44c3a8-1e6e-4524-82b8-ec3fbb30abad",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"customer",
+												"db44c3a8-1e6e-4524-82b8-ec3fbb30abad"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "305"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"131-C9KgMHB1ov9a5fpC5l8lSAGG8wA\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 15:15:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"db44c3a8-1e6e-4524-82b8-ec3fbb30abad\",\n    \"insurer\": true,\n    \"status\": \"INACTIVE\",\n    \"authorizationServerUserId\": \"480732c1-9ec9-4749-8943-2e5b3cb597df\",\n    \"contactInformations\": {\n        \"email\": \"pierrot@yopmail.com\"\n    },\n    \"activated\": true,\n    \"createdAt\": \"2023-11-02T14:31:55.870Z\",\n    \"updatedAt\": \"2023-11-02T14:31:55.870Z\",\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "get vehicles for a customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzc3MDMsImlhdCI6MTcwMjA0MTcwNCwiYXV0aF90aW1lIjoxNzAyMDQxNzAzLCJqdGkiOiJmZTAyNDM5Ny0zZmQwLTQzMjktYWJlNC1iMmE2N2I2ZTNhMTMiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNGJlM2QwYTctMjEyNC00NTU1LTkzMGYtNTRkNGVhZTE2OGE4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiQjlRRjVGVmpTaWhGIiwic2Vzc2lvbl9zdGF0ZSI6IjkwZmZjYjExLTRkNzMtNDlhZi1hNDMwLTVkNGI1NWI2ZWRmNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiLCJkZWZhdWx0LXVzZXItcm9sZXMiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiOTBmZmNiMTEtNGQ3My00OWFmLWE0MzAtNWQ0YjU1YjZlZGY3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIiwiZGVmYXVsdC11c2VyLXJvbGVzIl0sIm5hbWUiOiJtaWtlIGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6Im1pa2VAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoibWlrZSIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJtaWtlQHlvcG1haWwuY29tIn0.gdwfRBJxYH5ycwc0fjw31wkjxn_K9-LAu0TSNcmjvXAWGeSIYrXtjrOTSgsXOHxgas9UmV0zGENB1d9AeGkweojfrfF25FoMeFHXEnUVbyZcYHysNdQgPjfAtTGyQ6uV8tDt6w8kTPaNWkuZu0HX-0GcUfa704LvEW5FYQ7LX45GV0XkEDUQWdQT2AauD1rcM3CQ-Uw7IWXPYLzAVL-RoiZhv35-3jWrvEl3eN0Nb91jUYegL3qIZfFFIdkdUx81ObvVFz-OqGdGwfBAQ5FDjuSr-DPoT9KwIsE9ckwXSa1VMbpmzK7U67irTRPS4BFg--NkPUxFcbT_za156Wte9Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/customer/d4d6ed02-f792-4d62-9cb8-04120cba796d/vehicle",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"customer",
+										"d4d6ed02-f792-4d62-9cb8-04120cba796d",
+										"vehicle"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "get vehicles for a customer",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/customer/d4d6ed02-f792-4d62-9cb8-04120cba796d/vehicle",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"customer",
+												"d4d6ed02-f792-4d62-9cb8-04120cba796d",
+												"vehicle"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "464"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1d0-fZx/vtmxwRD9iJM89wPOuCbli6c\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 13:48:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n            \"contract\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n            \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n            \"vin\": \"1HGBH41JXMN109186\",\n            \"brand\": \"toyota\",\n            \"model\": \"yaris\",\n            \"year\": 2017,\n            \"registrationNumber\": \"AB-123-CD\",\n            \"originalInServiceDate\": \"2018-11-03T15:31:05.558Z\",\n            \"contractSubscriptionKm\": 100000,\n            \"createdAt\": \"2023-11-02T15:32:57.883Z\",\n            \"updatedAt\": \"2023-11-02T15:32:57.883Z\",\n            \"__v\": 0\n        }\n    ],\n    \"count\": 1,\n    \"limit\": 10,\n    \"start\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "get devices for a customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzc3MDMsImlhdCI6MTcwMjA0MTcwNCwiYXV0aF90aW1lIjoxNzAyMDQxNzAzLCJqdGkiOiJmZTAyNDM5Ny0zZmQwLTQzMjktYWJlNC1iMmE2N2I2ZTNhMTMiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNGJlM2QwYTctMjEyNC00NTU1LTkzMGYtNTRkNGVhZTE2OGE4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiQjlRRjVGVmpTaWhGIiwic2Vzc2lvbl9zdGF0ZSI6IjkwZmZjYjExLTRkNzMtNDlhZi1hNDMwLTVkNGI1NWI2ZWRmNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiLCJkZWZhdWx0LXVzZXItcm9sZXMiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiOTBmZmNiMTEtNGQ3My00OWFmLWE0MzAtNWQ0YjU1YjZlZGY3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIiwiZGVmYXVsdC11c2VyLXJvbGVzIl0sIm5hbWUiOiJtaWtlIGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6Im1pa2VAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoibWlrZSIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJtaWtlQHlvcG1haWwuY29tIn0.gdwfRBJxYH5ycwc0fjw31wkjxn_K9-LAu0TSNcmjvXAWGeSIYrXtjrOTSgsXOHxgas9UmV0zGENB1d9AeGkweojfrfF25FoMeFHXEnUVbyZcYHysNdQgPjfAtTGyQ6uV8tDt6w8kTPaNWkuZu0HX-0GcUfa704LvEW5FYQ7LX45GV0XkEDUQWdQT2AauD1rcM3CQ-Uw7IWXPYLzAVL-RoiZhv35-3jWrvEl3eN0Nb91jUYegL3qIZfFFIdkdUx81ObvVFz-OqGdGwfBAQ5FDjuSr-DPoT9KwIsE9ckwXSa1VMbpmzK7U67irTRPS4BFg--NkPUxFcbT_za156Wte9Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/customer/d4d6ed02-f792-4d62-9cb8-04120cba796d/device",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"customer",
+										"d4d6ed02-f792-4d62-9cb8-04120cba796d",
+										"device"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "get devices for a customer",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/customer/d4d6ed02-f792-4d62-9cb8-04120cba796d/device",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"customer",
+												"d4d6ed02-f792-4d62-9cb8-04120cba796d",
+												"device"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1305"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"519-N/i+9r2ZIr4dIJWE23BTIlpbqhs\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 13:49:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n            \"status\": \"PAIRED_INSURER\",\n            \"createdAt\": \"2023-11-01T16:48:57.197Z\",\n            \"updatedAt\": \"2023-11-02T15:53:19.312Z\",\n            \"__v\": 0,\n            \"customer\": {\n                \"_id\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n                \"insurer\": false,\n                \"status\": \"ACTIVE\",\n                \"authorizationServerUserId\": \"4be3d0a7-2124-4555-930f-54d4eae168a8\",\n                \"contactInformations\": {\n                    \"email\": \"mike@yopmail.com\"\n                },\n                \"activated\": true,\n                \"createdAt\": \"2023-11-02T13:24:40.667Z\",\n                \"updatedAt\": \"2023-11-02T13:24:40.667Z\",\n                \"__v\": 0,\n                \"firstName\": \"mike\",\n                \"lastName\": \"doe\",\n                \"fullName\": \"mike doe\"\n            },\n            \"vehicle\": {\n                \"_id\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n                \"contract\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n                \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n                \"vin\": \"1HGBH41JXMN109186\",\n                \"brand\": \"toyota\",\n                \"model\": \"yaris\",\n                \"year\": 2017,\n                \"registrationNumber\": \"AB-123-CD\",\n                \"originalInServiceDate\": \"2018-11-03T15:31:05.558Z\",\n                \"contractSubscriptionKm\": 100000,\n                \"createdAt\": \"2023-11-02T15:32:57.883Z\",\n                \"updatedAt\": \"2023-11-02T15:32:57.883Z\",\n                \"__v\": 0\n            },\n            \"insurerActivationDate\": \"2023-11-02T15:53:19.000Z\",\n            \"serialNumber\": \"76BUPWD9R2DCZ3VQS29FAR3TMEFAXEKY\",\n            \"events\": [],\n            \"lastSessions\": [\n                {\n                    \"_id\": \"2d8729cf-e408-4786-a3e3-13aa33eb37d9\",\n                    \"device\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n                    \"start\": \"2023-11-02T08:40:23.600Z\",\n                    \"end\": \"2023-11-02T08:40:32.630Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ],\n    \"count\": 1,\n    \"start\": 0,\n    \"limit\": 10\n}"
+								}
+							]
+						},
+						{
+							"name": "update a customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzc3MDMsImlhdCI6MTcwMjA0MTcwNCwiYXV0aF90aW1lIjoxNzAyMDQxNzAzLCJqdGkiOiJmZTAyNDM5Ny0zZmQwLTQzMjktYWJlNC1iMmE2N2I2ZTNhMTMiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNGJlM2QwYTctMjEyNC00NTU1LTkzMGYtNTRkNGVhZTE2OGE4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiQjlRRjVGVmpTaWhGIiwic2Vzc2lvbl9zdGF0ZSI6IjkwZmZjYjExLTRkNzMtNDlhZi1hNDMwLTVkNGI1NWI2ZWRmNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiLCJkZWZhdWx0LXVzZXItcm9sZXMiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiOTBmZmNiMTEtNGQ3My00OWFmLWE0MzAtNWQ0YjU1YjZlZGY3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIiwiZGVmYXVsdC11c2VyLXJvbGVzIl0sIm5hbWUiOiJtaWtlIGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6Im1pa2VAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoibWlrZSIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJtaWtlQHlvcG1haWwuY29tIn0.gdwfRBJxYH5ycwc0fjw31wkjxn_K9-LAu0TSNcmjvXAWGeSIYrXtjrOTSgsXOHxgas9UmV0zGENB1d9AeGkweojfrfF25FoMeFHXEnUVbyZcYHysNdQgPjfAtTGyQ6uV8tDt6w8kTPaNWkuZu0HX-0GcUfa704LvEW5FYQ7LX45GV0XkEDUQWdQT2AauD1rcM3CQ-Uw7IWXPYLzAVL-RoiZhv35-3jWrvEl3eN0Nb91jUYegL3qIZfFFIdkdUx81ObvVFz-OqGdGwfBAQ5FDjuSr-DPoT9KwIsE9ckwXSa1VMbpmzK7U67irTRPS4BFg--NkPUxFcbT_za156Wte9Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"\",\n    \"contactInformations\": {\n        \"phoneNumber\": \"\",\n        \"email\": \"\"\n    },\n    \"billingInformations\": {\n        \"lastName\": \"\",\n        \"firtName\": \"\",\n        \"company\": \"\",\n        \"address\": \"\",\n        \"postCode\": \"\",\n        \"country\": \"\"\n    },\n    \"paymentInformations\": {\n        \"lastName\": \"\",\n        \"firtName\": \"\",\n        \"iban\": \"\",\n        \"bic\": \"\",\n        \"rib\": \"\"\n    },\n    \"identityDocs\": {\n        \"idCardDocURL\": \"\",\n        \"residencyProofDocURL\": \"\"\n    },\n    \"paymentDocs\": {\n        \"directDebitMandateDocURL\": \"\",\n        \"termsOfSaleDocURL\": \"\"\n    },\n    \"activated\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ROOT_URL}}/customer/d4d6ed02-f792-4d62-9cb8-04120cba796d",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"customer",
+										"d4d6ed02-f792-4d62-9cb8-04120cba796d"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "contract",
+					"item": [
+						{
+							"name": "find all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzU1MjgsImlhdCI6MTcwMjAzOTUyOCwiYXV0aF90aW1lIjoxNzAyMDM5NTI4LCJqdGkiOiIzODQ3MmFjYy05Mzk3LTQ0M2UtOGJmNS1hMDNiMjU5NTdkM2QiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiOGFhQVpBaXJlekM3Iiwic2Vzc2lvbl9zdGF0ZSI6IjJlMDkyMDllLTA3ODktNGIwMS04N2Y5LTc4N2NjOGMzZWU0NyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiMmUwOTIwOWUtMDc4OS00YjAxLTg3ZjktNzg3Y2M4YzNlZTQ3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Ddpq5QIDqUC3zXPbGMUwsPoMpfoVU4Op0kYmQHORhIRvBLvNyHTxp_0Vy5bkwhUMT-qoL_lx_rtmcG_EYsFzWPDle5J9Ura0LuBqWv52WpIih6SLqupRNu5YVIoZj1UTWK3KpqtDkTMoWIhB98pzp7Frx9P4cxzJyhdhwn9fS5kWt4gD87t1pzYxWBipWVQIEZIFzngUdswpDQRAAwFUlCKyWgu1jxf9W3EUpWcxj0paRUlVbxkGCfmJAY79n-PBD8IYZSXTFaPw3sShnLCauzWgTTbOD58l1kBK4S0yf1xnuV7SPH1VDtrMkbzcQzNl4lACU8qzbt2utkfa8e8w6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/contract",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"contract"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "find all with search filters",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/contract?value=UECWLWRGBP",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"contract"
+											],
+											"query": [
+												{
+													"key": "value",
+													"value": "UECWLWRGBP"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "320"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"140-MDwvm5wSGHYNhvBoiSTYhMVLMtk\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 13:55:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n            \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n            \"status\": \"INACTIVE\",\n            \"paymentDueDay\": 1,\n            \"createdAt\": \"2023-11-02T15:18:16.536Z\",\n            \"updatedAt\": \"2023-11-02T15:18:16.536Z\",\n            \"__v\": 0,\n            \"ref\": \"UECWLWRGBP8M7M4LUD9UKJJZ6BCS6WDT\",\n            \"vehicles\": []\n        }\n    ],\n    \"count\": 1,\n    \"start\": 0,\n    \"limit\": 10\n}"
+								},
+								{
+									"name": "find all no search filters",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/contract",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"contract"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "320"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"140-MDwvm5wSGHYNhvBoiSTYhMVLMtk\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 13:56:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n            \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n            \"status\": \"INACTIVE\",\n            \"paymentDueDay\": 1,\n            \"createdAt\": \"2023-11-02T15:18:16.536Z\",\n            \"updatedAt\": \"2023-11-02T15:18:16.536Z\",\n            \"__v\": 0,\n            \"ref\": \"UECWLWRGBP8M7M4LUD9UKJJZ6BCS6WDT\",\n            \"vehicles\": []\n        }\n    ],\n    \"count\": 1,\n    \"start\": 0,\n    \"limit\": 10\n}"
+								}
+							]
+						},
+						{
+							"name": "cancel subscription",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDM2MjM5OTAsImlhdCI6MTcwMzU4Nzk5MCwiYXV0aF90aW1lIjoxNzAzNTg3OTkwLCJqdGkiOiIxYjUxNGVmYi03NGVjLTRhYTAtOTkwMy0xMmJjNTIzYTI5ZmUiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiME9NeVZvVmtHT0RRIiwic2Vzc2lvbl9zdGF0ZSI6ImMxNDg4ZDdjLTViY2MtNDU1Yi1hMWExLWVhNjUwNTMwYzBiMCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiYzE0ODhkN2MtNWJjYy00NTViLWExYTEtZWE2NTA1MzBjMGIwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.RW64ZCjap-V_-ebuzal2tow31smahRprak5qEhRrLHrf_v7gS7WWd78gZVUh4BSyvPlICcNXw-YUKmaq_vqtFoCGHqBDtymiq2UpwtkILElK3fP8mf6MFDFzlbGUj0pXs9hFVMa4FoolPS6Mhnx9WOi3DU71Tr8BOqXSRWrAoc8Z8CVXEW0tTqJjcZ7XxU3axGmZ_f9AeeK_O8To0JIp5d-adB6CVIL2ksl3FnjatKUFO2HLd_L7BAZrf_K9_P4i1kEpKTkbto31FzQfPj6E4sk7bE3xA8WpzxZmrpZkZ-DtK_c3MdSooyMo9x-dpZn1yvZcflAP69uQmb3ecJrKXg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/contract/39c17a04-323e-4dc1-ba92-96366ad86c03/cancel",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"contract",
+										"39c17a04-323e-4dc1-ba92-96366ad86c03",
+										"cancel"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": []
+						},
+						{
+							"name": "find one",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJnR2JNbElkWjVZS1hfYVd3NGIyckxDMjJOOXlGd054VGxRTW5qendPeVVRIn0.eyJleHAiOjE2OTg5NzMwMDUsImlhdCI6MTY5ODkzNzAwNSwiYXV0aF90aW1lIjoxNjk4OTM3MDA1LCJqdGkiOiJjZjc0NzE5Zi1jYWNkLTQ2MzAtYjlhNy1jZTQwMjk2NGI2YzIiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNDgwNzMyYzEtOWVjOS00NzQ5LTg5NDMtMmU1YjNjYjU5N2RmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiVWFIZExRWlV1TTRnIiwic2Vzc2lvbl9zdGF0ZSI6IjY3YWYxOWU1LTMwMWEtNDQ0ZS05NTI0LTQ3NjAwZTdjNTUzZiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcnZpc29yLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInN1cGVydmlzb3IiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiNjdhZjE5ZTUtMzAxYS00NDRlLTk1MjQtNDc2MDBlN2M1NTNmIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJ2aXNvci1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJzdXBlcnZpc29yIl0sIm5hbWUiOiJwaWVycm90IGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6InBpZXJyb3RAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoicGllcnJvdCIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJwaWVycm90QHlvcG1haWwuY29tIn0.leTrsOnmJMZo8_i3SQcQT8bzng2jlxeY3gPmq1UJaCPhOm03QymS3lrl_fLCbEEBgw_yn7NQy1aJtilomRGwGCTt_QVoFq8bU18fUtc9xQD0qSRuiNxYOBWbnynmNaPxVNoi5IhnY33qnrpK7_iuNAkZAImpBVao-kUtZiBaiBX3XrkuEG6xPvYLpPea5JuAyoqnWhn6f573ZZU7R2h92LvRejhcJFAITeqt8PwYyJNDKzVEjRmtFh9kq-BxF5rX6Rk9PChukTBL07svK1kiUj2W4-7Ur5R4QLDECXFyWY91K3K23PDTpKhMWeoJmbY5_sGlftQ446u4lYpk8FQYmg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/contract/ce8e7910-424f-4e18-bddc-c88017d5b637",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"contract",
+										"ce8e7910-424f-4e18-bddc-c88017d5b637"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "find one",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/contract/ce8e7910-424f-4e18-bddc-c88017d5b637",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"contract",
+												"ce8e7910-424f-4e18-bddc-c88017d5b637"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "220"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"dc-SZaK+x3pubu7THKq3wHjsUSvDJc\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 15:19:40 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n    \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n    \"status\": \"INACTIVE\",\n    \"paymentDueDay\": 1,\n    \"createdAt\": \"2023-11-02T15:18:16.536Z\",\n    \"updatedAt\": \"2023-11-02T15:18:16.536Z\",\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "get devices for a contract",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJnR2JNbElkWjVZS1hfYVd3NGIyckxDMjJOOXlGd054VGxRTW5qendPeVVRIn0.eyJleHAiOjE2OTg5NzMwMDUsImlhdCI6MTY5ODkzNzAwNSwiYXV0aF90aW1lIjoxNjk4OTM3MDA1LCJqdGkiOiJjZjc0NzE5Zi1jYWNkLTQ2MzAtYjlhNy1jZTQwMjk2NGI2YzIiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNDgwNzMyYzEtOWVjOS00NzQ5LTg5NDMtMmU1YjNjYjU5N2RmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiVWFIZExRWlV1TTRnIiwic2Vzc2lvbl9zdGF0ZSI6IjY3YWYxOWU1LTMwMWEtNDQ0ZS05NTI0LTQ3NjAwZTdjNTUzZiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcnZpc29yLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInN1cGVydmlzb3IiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiNjdhZjE5ZTUtMzAxYS00NDRlLTk1MjQtNDc2MDBlN2M1NTNmIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJ2aXNvci1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJzdXBlcnZpc29yIl0sIm5hbWUiOiJwaWVycm90IGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6InBpZXJyb3RAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoicGllcnJvdCIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJwaWVycm90QHlvcG1haWwuY29tIn0.leTrsOnmJMZo8_i3SQcQT8bzng2jlxeY3gPmq1UJaCPhOm03QymS3lrl_fLCbEEBgw_yn7NQy1aJtilomRGwGCTt_QVoFq8bU18fUtc9xQD0qSRuiNxYOBWbnynmNaPxVNoi5IhnY33qnrpK7_iuNAkZAImpBVao-kUtZiBaiBX3XrkuEG6xPvYLpPea5JuAyoqnWhn6f573ZZU7R2h92LvRejhcJFAITeqt8PwYyJNDKzVEjRmtFh9kq-BxF5rX6Rk9PChukTBL07svK1kiUj2W4-7Ur5R4QLDECXFyWY91K3K23PDTpKhMWeoJmbY5_sGlftQ446u4lYpk8FQYmg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/contract/ce8e7910-424f-4e18-bddc-c88017d5b637/device",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"contract",
+										"ce8e7910-424f-4e18-bddc-c88017d5b637",
+										"device"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "get device for a contract",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/contract/ce8e7910-424f-4e18-bddc-c88017d5b637/device",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"contract",
+												"ce8e7910-424f-4e18-bddc-c88017d5b637",
+												"device"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2d-sw4U2XDciaQm6HVjoxi9xGqxB/4\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 15:21:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [],\n    \"count\": 0,\n    \"limit\": 10,\n    \"start\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "get vehicles for a contract",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJnR2JNbElkWjVZS1hfYVd3NGIyckxDMjJOOXlGd054VGxRTW5qendPeVVRIn0.eyJleHAiOjE2OTg5NzMwMDUsImlhdCI6MTY5ODkzNzAwNSwiYXV0aF90aW1lIjoxNjk4OTM3MDA1LCJqdGkiOiJjZjc0NzE5Zi1jYWNkLTQ2MzAtYjlhNy1jZTQwMjk2NGI2YzIiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNDgwNzMyYzEtOWVjOS00NzQ5LTg5NDMtMmU1YjNjYjU5N2RmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiVWFIZExRWlV1TTRnIiwic2Vzc2lvbl9zdGF0ZSI6IjY3YWYxOWU1LTMwMWEtNDQ0ZS05NTI0LTQ3NjAwZTdjNTUzZiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcnZpc29yLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInN1cGVydmlzb3IiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiNjdhZjE5ZTUtMzAxYS00NDRlLTk1MjQtNDc2MDBlN2M1NTNmIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJ2aXNvci1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJzdXBlcnZpc29yIl0sIm5hbWUiOiJwaWVycm90IGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6InBpZXJyb3RAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoicGllcnJvdCIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJwaWVycm90QHlvcG1haWwuY29tIn0.leTrsOnmJMZo8_i3SQcQT8bzng2jlxeY3gPmq1UJaCPhOm03QymS3lrl_fLCbEEBgw_yn7NQy1aJtilomRGwGCTt_QVoFq8bU18fUtc9xQD0qSRuiNxYOBWbnynmNaPxVNoi5IhnY33qnrpK7_iuNAkZAImpBVao-kUtZiBaiBX3XrkuEG6xPvYLpPea5JuAyoqnWhn6f573ZZU7R2h92LvRejhcJFAITeqt8PwYyJNDKzVEjRmtFh9kq-BxF5rX6Rk9PChukTBL07svK1kiUj2W4-7Ur5R4QLDECXFyWY91K3K23PDTpKhMWeoJmbY5_sGlftQ446u4lYpk8FQYmg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/contract/ce8e7910-424f-4e18-bddc-c88017d5b637/vehicle",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"contract",
+										"ce8e7910-424f-4e18-bddc-c88017d5b637",
+										"vehicle"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "get vehicles for a contract",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/contract/ce8e7910-424f-4e18-bddc-c88017d5b637/vehicle",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"contract",
+												"ce8e7910-424f-4e18-bddc-c88017d5b637",
+												"vehicle"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2d-sw4U2XDciaQm6HVjoxi9xGqxB/4\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 15:21:49 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [],\n    \"count\": 0,\n    \"limit\": 10,\n    \"start\": 0\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "subscription-application",
+					"item": [
+						{
+							"name": "find all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDI4MzczNzAsImlhdCI6MTcwMjgwMTM3MCwiYXV0aF90aW1lIjoxNzAyODAxMzcwLCJqdGkiOiIwZjZjMzU2ZS0zZjkzLTQxNmItOGY1OS1jYzQ1M2Q2OGRkZGUiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiTDJ2WXQ0MW5xWllwIiwic2Vzc2lvbl9zdGF0ZSI6ImVmNTBjY2ViLTAxZjctNGY1NS1hNTViLWZkNDFjNTczMjI3NCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZWY1MGNjZWItMDFmNy00ZjU1LWE1NWItZmQ0MWM1NzMyMjc0IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Th1Xqd7ribRzgMT_uwHqnSWAEvhKtGuTbX5k6GmJs8vaHI_zRDcj79C7geNv5j1pusZlOVhoe7aGqqW_F7PbH8_2h5V0efyb0E_I2TEAoHjRul1Hmo_thfjhE-9mdpbzwAJC4NNoaslFyp3vX7XZ3JnwC699wMKpgdSkyhKFt71qP0fTzr4EGhm2lrZNQTiPy3XwakRozWNdWuPeNykC4VcCO_2gsJpSI7g0tRI1Om2GX3ZDxDWp6c38ExW3O50cvQz0lgs98BMRu0v2fchSntGthB7T0zzkaxw5TZsw9BzezehKaLf_2YVwstrpeUqUeaGsMU-75weVt26Pg8oBaQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/subscription-application",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"subscription-application"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": []
+						},
+						{
+							"name": "update subscription application",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDI4MzczNzAsImlhdCI6MTcwMjgwMTM3MCwiYXV0aF90aW1lIjoxNzAyODAxMzcwLCJqdGkiOiIwZjZjMzU2ZS0zZjkzLTQxNmItOGY1OS1jYzQ1M2Q2OGRkZGUiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiTDJ2WXQ0MW5xWllwIiwic2Vzc2lvbl9zdGF0ZSI6ImVmNTBjY2ViLTAxZjctNGY1NS1hNTViLWZkNDFjNTczMjI3NCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZWY1MGNjZWItMDFmNy00ZjU1LWE1NWItZmQ0MWM1NzMyMjc0IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Th1Xqd7ribRzgMT_uwHqnSWAEvhKtGuTbX5k6GmJs8vaHI_zRDcj79C7geNv5j1pusZlOVhoe7aGqqW_F7PbH8_2h5V0efyb0E_I2TEAoHjRul1Hmo_thfjhE-9mdpbzwAJC4NNoaslFyp3vX7XZ3JnwC699wMKpgdSkyhKFt71qP0fTzr4EGhm2lrZNQTiPy3XwakRozWNdWuPeNykC4VcCO_2gsJpSI7g0tRI1Om2GX3ZDxDWp6c38ExW3O50cvQz0lgs98BMRu0v2fchSntGthB7T0zzkaxw5TZsw9BzezehKaLf_2YVwstrpeUqUeaGsMU-75weVt26Pg8oBaQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/subscription-application/d4d6ed02-f792-4d62-9cb8-04120cba796d",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"subscription-application",
+										"d4d6ed02-f792-4d62-9cb8-04120cba796d"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": []
+						},
+						{
+							"name": "review subscription application",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDM2MjM5OTAsImlhdCI6MTcwMzU4Nzk5MCwiYXV0aF90aW1lIjoxNzAzNTg3OTkwLCJqdGkiOiIxYjUxNGVmYi03NGVjLTRhYTAtOTkwMy0xMmJjNTIzYTI5ZmUiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiME9NeVZvVmtHT0RRIiwic2Vzc2lvbl9zdGF0ZSI6ImMxNDg4ZDdjLTViY2MtNDU1Yi1hMWExLWVhNjUwNTMwYzBiMCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiYzE0ODhkN2MtNWJjYy00NTViLWExYTEtZWE2NTA1MzBjMGIwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.RW64ZCjap-V_-ebuzal2tow31smahRprak5qEhRrLHrf_v7gS7WWd78gZVUh4BSyvPlICcNXw-YUKmaq_vqtFoCGHqBDtymiq2UpwtkILElK3fP8mf6MFDFzlbGUj0pXs9hFVMa4FoolPS6Mhnx9WOi3DU71Tr8BOqXSRWrAoc8Z8CVXEW0tTqJjcZ7XxU3axGmZ_f9AeeK_O8To0JIp5d-adB6CVIL2ksl3FnjatKUFO2HLd_L7BAZrf_K9_P4i1kEpKTkbto31FzQfPj6E4sk7bE3xA8WpzxZmrpZkZ-DtK_c3MdSooyMo9x-dpZn1yvZcflAP69uQmb3ecJrKXg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/subscription-application/309870cf-7373-48b4-914f-7224940635da/review",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"subscription-application",
+										"309870cf-7373-48b4-914f-7224940635da",
+										"review"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": []
+						},
+						{
+							"name": "finalize subscription application",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDM2MjM5OTAsImlhdCI6MTcwMzU4Nzk5MCwiYXV0aF90aW1lIjoxNzAzNTg3OTkwLCJqdGkiOiIxYjUxNGVmYi03NGVjLTRhYTAtOTkwMy0xMmJjNTIzYTI5ZmUiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiME9NeVZvVmtHT0RRIiwic2Vzc2lvbl9zdGF0ZSI6ImMxNDg4ZDdjLTViY2MtNDU1Yi1hMWExLWVhNjUwNTMwYzBiMCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiYzE0ODhkN2MtNWJjYy00NTViLWExYTEtZWE2NTA1MzBjMGIwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.RW64ZCjap-V_-ebuzal2tow31smahRprak5qEhRrLHrf_v7gS7WWd78gZVUh4BSyvPlICcNXw-YUKmaq_vqtFoCGHqBDtymiq2UpwtkILElK3fP8mf6MFDFzlbGUj0pXs9hFVMa4FoolPS6Mhnx9WOi3DU71Tr8BOqXSRWrAoc8Z8CVXEW0tTqJjcZ7XxU3axGmZ_f9AeeK_O8To0JIp5d-adB6CVIL2ksl3FnjatKUFO2HLd_L7BAZrf_K9_P4i1kEpKTkbto31FzQfPj6E4sk7bE3xA8WpzxZmrpZkZ-DtK_c3MdSooyMo9x-dpZn1yvZcflAP69uQmb3ecJrKXg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"PAYMENT_PENDING\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ROOT_URL}}/subscription-application/309870cf-7373-48b4-914f-7224940635da/finalize",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"subscription-application",
+										"309870cf-7373-48b4-914f-7224940635da",
+										"finalize"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": []
+						},
+						{
+							"name": "find one",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDI4MzczNzAsImlhdCI6MTcwMjgwMTM3MCwiYXV0aF90aW1lIjoxNzAyODAxMzcwLCJqdGkiOiIwZjZjMzU2ZS0zZjkzLTQxNmItOGY1OS1jYzQ1M2Q2OGRkZGUiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiTDJ2WXQ0MW5xWllwIiwic2Vzc2lvbl9zdGF0ZSI6ImVmNTBjY2ViLTAxZjctNGY1NS1hNTViLWZkNDFjNTczMjI3NCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZWY1MGNjZWItMDFmNy00ZjU1LWE1NWItZmQ0MWM1NzMyMjc0IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Th1Xqd7ribRzgMT_uwHqnSWAEvhKtGuTbX5k6GmJs8vaHI_zRDcj79C7geNv5j1pusZlOVhoe7aGqqW_F7PbH8_2h5V0efyb0E_I2TEAoHjRul1Hmo_thfjhE-9mdpbzwAJC4NNoaslFyp3vX7XZ3JnwC699wMKpgdSkyhKFt71qP0fTzr4EGhm2lrZNQTiPy3XwakRozWNdWuPeNykC4VcCO_2gsJpSI7g0tRI1Om2GX3ZDxDWp6c38ExW3O50cvQz0lgs98BMRu0v2fchSntGthB7T0zzkaxw5TZsw9BzezehKaLf_2YVwstrpeUqUeaGsMU-75weVt26Pg8oBaQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/subscription-application/9db0fabc-bade-4a86-a954-23d832c628ac",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"subscription-application",
+										"9db0fabc-bade-4a86-a954-23d832c628ac"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": []
+						},
+						{
+							"name": "create a subscription application for a customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDM2MjM5OTAsImlhdCI6MTcwMzU4Nzk5MCwiYXV0aF90aW1lIjoxNzAzNTg3OTkwLCJqdGkiOiIxYjUxNGVmYi03NGVjLTRhYTAtOTkwMy0xMmJjNTIzYTI5ZmUiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiME9NeVZvVmtHT0RRIiwic2Vzc2lvbl9zdGF0ZSI6ImMxNDg4ZDdjLTViY2MtNDU1Yi1hMWExLWVhNjUwNTMwYzBiMCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiYzE0ODhkN2MtNWJjYy00NTViLWExYTEtZWE2NTA1MzBjMGIwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.RW64ZCjap-V_-ebuzal2tow31smahRprak5qEhRrLHrf_v7gS7WWd78gZVUh4BSyvPlICcNXw-YUKmaq_vqtFoCGHqBDtymiq2UpwtkILElK3fP8mf6MFDFzlbGUj0pXs9hFVMa4FoolPS6Mhnx9WOi3DU71Tr8BOqXSRWrAoc8Z8CVXEW0tTqJjcZ7XxU3axGmZ_f9AeeK_O8To0JIp5d-adB6CVIL2ksl3FnjatKUFO2HLd_L7BAZrf_K9_P4i1kEpKTkbto31FzQfPj6E4sk7bE3xA8WpzxZmrpZkZ-DtK_c3MdSooyMo9x-dpZn1yvZcflAP69uQmb3ecJrKXg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n    \"vehicles\": [\n        {\n            \"vin\": \"1HGBH41JXMN109186\",\n            \"brand\": \"toyota\",\n            \"model\": \"yaris\",\n            \"year\": 2017,\n            \"registrationNumber\": \"AB-123-CD\",\n            \"originalInServiceDate\": \"2023-12-16T11:44:26.916Z\",\n            \"contractSubscriptionKm\": 100000,\n            \"driverLicenceDocURL\": \"vehicle/driver-license/40e1a069-289c-4215-a7fa-d8adc8ac61f7_test.pdf\",\n            \"vehicleRegistrationCardDocURL\": \"vehicle/registration-card/8c6b815f-02e3-4a32-957a-11f55fee09aa_test.pdf\"\n        }\n    ],\n    \"contract\": {\n        \"contractDocURL\": \"contract/contract/26a70e49-9e7f-4e36-9c7b-f0b1fadcea12_test.pdf\",\n        \"ecommerceProduct\": \"70b1fcba-3953-4ea3-9f66-8f7f218dd00a\"\n    },\n    \"contactInformations\": {\n        \"phoneNumber\": \"+33666084313\",\n        \"email\": \"test@yopmail.com\"\n    },\n    \"billingInformations\": {\n        \"lastName\": \"doe\",\n        \"firstName\": \"mike\",\n        \"company\": \"\",\n        \"address\": \"9 rue de la charité\",\n        \"postCode\": \"75001\",\n        \"city\": \"Paris\",\n        \"country\": \"FRANCE\"\n    },\n    \"identityDocs\": {\n        \"idCardDocURL\": \"customer/identity/id-card/62fd3ed1-d2be-4af1-bd85-7882daa71968_test.pdf\",\n        \"residencyProofDocURL\": \"customer/identity/residency-proof/00f03335-7537-47fc-9d22-2c5c22e4dbc0_test.pdf\"\n    },\n    \"paymentDocs\": {\n        \"termsOfSaleDocURL\": \"customer/payments/terms-of-sales/6b947d09-76a6-416c-a566-c278f62622ab_test.pdf\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ROOT_URL}}/subscription-application/register",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"subscription-application",
+										"register"
+									]
+								},
+								"description": "Role Restrictions:  \n\\- Required Role: supervisor/insurer or superadmin"
+							},
+							"response": [
+								{
+									"name": "create a subscription application for a customer",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n    \"vehicles\": [\n        {\n            \"vin\": \"1HGBH41JXMN109186\",\n            \"brand\": \"toyota\",\n            \"model\": \"yaris\",\n            \"year\": 2017,\n            \"registrationNumber\": \"AB-123-CD\",\n            \"originalInServiceDate\": \"2023-12-16T11:44:26.916Z\",\n            \"contractSubscriptionKm\": 100000,\n            \"driverLicenceDocURL\": \"vehicle/driver-license/40e1a069-289c-4215-a7fa-d8adc8ac61f7_test.pdf\",\n            \"vehicleRegistrationCardDocURL\": \"vehicle/registration-card/8c6b815f-02e3-4a32-957a-11f55fee09aa_test.pdf\"\n        }\n    ],\n    \"contract\": {\n        \"contractDocURL\": \"contract/contract/26a70e49-9e7f-4e36-9c7b-f0b1fadcea12_test.pdf\",\n        \"ecommerceProduct\": \"70b1fcba-3953-4ea3-9f66-8f7f218dd00a\",\n        \"ecommerceGateway\": \"STRIPE\"\n    },\n    \"contactInformations\": {\n        \"phoneNumber\": \"+33666084313\",\n        \"email\": \"test@yopmail.com\"\n    },\n    \"billingInformations\": {\n        \"lastName\": \"doe\",\n        \"firstName\": \"mike\",\n        \"company\": \"\",\n        \"address\": \"9 rue de la charité\",\n        \"postCode\": \"75001\",\n        \"city\": \"Paris\",\n        \"country\": \"FRANCE\"\n    },\n    \"identityDocs\": {\n        \"idCardDocURL\": \"customer/identity/id-card/62fd3ed1-d2be-4af1-bd85-7882daa71968_test.pdf\",\n        \"residencyProofDocURL\": \"customer/identity/residency-proof/00f03335-7537-47fc-9d22-2c5c22e4dbc0_test.pdf\"\n    },\n    \"paymentDocs\": {\n        \"termsOfSaleDocURL\": \"customer/payments/terms-of-sales/6b947d09-76a6-416c-a566-c278f62622ab_test.pdf\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ROOT_URL}}/subscription-application/register",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"subscription-application",
+												"register"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 26 Dec 2023 10:59:19 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "784"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"310-iFG4ObEW1OwDfWaMxdsMG2IQcjw\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15724800; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n    \"status\": \"PENDING\",\n    \"vehicles\": [\n        {\n            \"vin\": \"1HGBH41JXMN109186\",\n            \"brand\": \"toyota\",\n            \"model\": \"yaris\",\n            \"year\": 2017,\n            \"registrationNumber\": \"AB-123-CD\",\n            \"originalInServiceDate\": \"2023-12-16T11:44:26.916Z\",\n            \"contractSubscriptionKm\": 100000,\n            \"driverLicenceDocURL\": \"vehicle/driver-license/40e1a069-289c-4215-a7fa-d8adc8ac61f7_test.pdf\",\n            \"vehicleRegistrationCardDocURL\": \"vehicle/registration-card/8c6b815f-02e3-4a32-957a-11f55fee09aa_test.pdf\"\n        }\n    ],\n    \"contract\": {\n        \"contractDocURL\": \"contract/contract/26a70e49-9e7f-4e36-9c7b-f0b1fadcea12_test.pdf\",\n        \"ecommerceProduct\": \"70b1fcba-3953-4ea3-9f66-8f7f218dd00a\",\n        \"ecommerceGateway\": \"STRIPE\"\n    },\n    \"_id\": \"309870cf-7373-48b4-914f-7224940635da\",\n    \"createdAt\": \"2023-12-26T10:59:19.800Z\",\n    \"updatedAt\": \"2023-12-26T10:59:19.800Z\",\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "create a subscription application as a customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzU1MjgsImlhdCI6MTcwMjAzOTUyOCwiYXV0aF90aW1lIjoxNzAyMDM5NTI4LCJqdGkiOiIzODQ3MmFjYy05Mzk3LTQ0M2UtOGJmNS1hMDNiMjU5NTdkM2QiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiOGFhQVpBaXJlekM3Iiwic2Vzc2lvbl9zdGF0ZSI6IjJlMDkyMDllLTA3ODktNGIwMS04N2Y5LTc4N2NjOGMzZWU0NyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiMmUwOTIwOWUtMDc4OS00YjAxLTg3ZjktNzg3Y2M4YzNlZTQ3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Ddpq5QIDqUC3zXPbGMUwsPoMpfoVU4Op0kYmQHORhIRvBLvNyHTxp_0Vy5bkwhUMT-qoL_lx_rtmcG_EYsFzWPDle5J9Ura0LuBqWv52WpIih6SLqupRNu5YVIoZj1UTWK3KpqtDkTMoWIhB98pzp7Frx9P4cxzJyhdhwn9fS5kWt4gD87t1pzYxWBipWVQIEZIFzngUdswpDQRAAwFUlCKyWgu1jxf9W3EUpWcxj0paRUlVbxkGCfmJAY79n-PBD8IYZSXTFaPw3sShnLCauzWgTTbOD58l1kBK4S0yf1xnuV7SPH1VDtrMkbzcQzNl4lACU8qzbt2utkfa8e8w6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"vehicles\": [\n        {\n            \"vin\": \"1HGBH41JXMN109186\",\n            \"brand\": \"toyota\",\n            \"model\": \"yaris\",\n            \"year\": 2017,\n            \"registrationNumber\": \"AB-123-CD\",\n            \"originalInServiceDate\": \"'2023-12-16T11:44:26.916Z'\",\n            \"contractSubscriptionKm\": 100000,\n            \"driverLicenceDocURL\": \"vehicle/driver-license/40e1a069-289c-4215-a7fa-d8adc8ac61f7_test.pdf\",\n            \"vehicleRegistrationCardDocURL\": \"vehicle/registration-card/8c6b815f-02e3-4a32-957a-11f55fee09aa_test.pdf\"\n        }\n    ],\n    \"contract\": {\n        \"contractDocURL\": \"contract/contract/26a70e49-9e7f-4e36-9c7b-f0b1fadcea12_test.pdf\",\n        \"productId\": \"prod_PCKK2SSUZRptut\"\n    },\n    \"contactInformations\": {\n        \"phoneNumber\": \"0666084313\",\n        \"email\": \"test@yopmail.com\"\n    },\n    \"billingInformations\": {\n        \"lastName\": \"doe\",\n        \"firstName\": \"john\",\n        \"company\": \"\",\n        \"address\": \"9 rue de la charité\",\n        \"postCode\": \"75001\",\n        \"country\": \"FRANCE\"\n    },\n    \"identityDocs\": {\n        \"idCardDocURL\": \"customer/identity/id-card/62fd3ed1-d2be-4af1-bd85-7882daa71968_test.pdf\",\n        \"residencyProofDocURL\": \"customer/identity/residency-proof/00f03335-7537-47fc-9d22-2c5c22e4dbc0_test.pdf\"\n    },\n    \"paymentDocs\": {\n        \"termsOfSaleDocURL\": \"customer/payments/terms-of-sales/6b947d09-76a6-416c-a566-c278f62622ab_test.pd\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ROOT_URL}}/subscription-application",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"subscription-application"
+									]
+								},
+								"description": "Role Restrictions:  \n\\- Required Role: supervisor/insurer or superadmin"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "device",
+					"item": [
+						{
+							"name": "create a device",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzU1MjgsImlhdCI6MTcwMjAzOTUyOCwiYXV0aF90aW1lIjoxNzAyMDM5NTI4LCJqdGkiOiIzODQ3MmFjYy05Mzk3LTQ0M2UtOGJmNS1hMDNiMjU5NTdkM2QiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiOGFhQVpBaXJlekM3Iiwic2Vzc2lvbl9zdGF0ZSI6IjJlMDkyMDllLTA3ODktNGIwMS04N2Y5LTc4N2NjOGMzZWU0NyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiMmUwOTIwOWUtMDc4OS00YjAxLTg3ZjktNzg3Y2M4YzNlZTQ3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Ddpq5QIDqUC3zXPbGMUwsPoMpfoVU4Op0kYmQHORhIRvBLvNyHTxp_0Vy5bkwhUMT-qoL_lx_rtmcG_EYsFzWPDle5J9Ura0LuBqWv52WpIih6SLqupRNu5YVIoZj1UTWK3KpqtDkTMoWIhB98pzp7Frx9P4cxzJyhdhwn9fS5kWt4gD87t1pzYxWBipWVQIEZIFzngUdswpDQRAAwFUlCKyWgu1jxf9W3EUpWcxj0paRUlVbxkGCfmJAY79n-PBD8IYZSXTFaPw3sShnLCauzWgTTbOD58l1kBK4S0yf1xnuV7SPH1VDtrMkbzcQzNl4lACU8qzbt2utkfa8e8w6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"serialNumber\": \"E79JSD4H356L6VK3FQ8QB4ZNF8SUU39S\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ROOT_URL}}/device",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"device"
+									]
+								},
+								"description": "Role Restrictions:  \n\\- Required Role: supervisor/insurer or superadmin"
+							},
+							"response": [
+								{
+									"name": "create a device",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"serialNumber\": \"E79JSD4H356L6VK3FQ8QB4ZNF8SUU39S\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ROOT_URL}}/device",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"device"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "288"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"120-2v2Zqxm09mCqPMqAuAAOhDpKKDw\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 13:16:04 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"device\": {\n        \"_id\": \"530c86de-6dc8-459c-894c-00db4e182752\",\n        \"status\": \"INACTIVE\",\n        \"serialNumber\": \"E79JSD4H356L6VK3FQ8QB4ZNF8SUU39S\",\n        \"createdAt\": \"2023-12-08T13:16:04.248Z\",\n        \"updatedAt\": \"2023-12-08T13:16:04.248Z\",\n        \"__v\": 0\n    },\n    \"credentials\": {\n        \"type\": \"secret\",\n        \"value\": \"1S2oztt81Bbu0fC1ZHwNwFM7g4kliWo0\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "find all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzU1MjgsImlhdCI6MTcwMjAzOTUyOCwiYXV0aF90aW1lIjoxNzAyMDM5NTI4LCJqdGkiOiIzODQ3MmFjYy05Mzk3LTQ0M2UtOGJmNS1hMDNiMjU5NTdkM2QiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiOGFhQVpBaXJlekM3Iiwic2Vzc2lvbl9zdGF0ZSI6IjJlMDkyMDllLTA3ODktNGIwMS04N2Y5LTc4N2NjOGMzZWU0NyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiMmUwOTIwOWUtMDc4OS00YjAxLTg3ZjktNzg3Y2M4YzNlZTQ3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Ddpq5QIDqUC3zXPbGMUwsPoMpfoVU4Op0kYmQHORhIRvBLvNyHTxp_0Vy5bkwhUMT-qoL_lx_rtmcG_EYsFzWPDle5J9Ura0LuBqWv52WpIih6SLqupRNu5YVIoZj1UTWK3KpqtDkTMoWIhB98pzp7Frx9P4cxzJyhdhwn9fS5kWt4gD87t1pzYxWBipWVQIEZIFzngUdswpDQRAAwFUlCKyWgu1jxf9W3EUpWcxj0paRUlVbxkGCfmJAY79n-PBD8IYZSXTFaPw3sShnLCauzWgTTbOD58l1kBK4S0yf1xnuV7SPH1VDtrMkbzcQzNl4lACU8qzbt2utkfa8e8w6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/device?value=76BUPWD",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"device"
+									],
+									"query": [
+										{
+											"key": "value",
+											"value": "76BUPWD"
+										}
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "find all jwt error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/device",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"device"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "69"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"45-MZJWZc+Y+RUbHpnhz2B2Vipii24\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 12:44:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Forbidden resource\",\n    \"error\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+								},
+								{
+									"name": "find all no search value",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/device",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"device"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1250"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4e2-xb1QOfsRb8stfPWnyjkVb12JnfU\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 12:58:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n            \"status\": \"PAIRED_INSURER\",\n            \"createdAt\": \"2023-11-01T16:48:57.197Z\",\n            \"updatedAt\": \"2023-11-02T15:53:19.312Z\",\n            \"__v\": 0,\n            \"customer\": {\n                \"_id\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n                \"insurer\": false,\n                \"status\": \"INACTIVE\",\n                \"authorizationServerUserId\": \"4be3d0a7-2124-4555-930f-54d4eae168a8\",\n                \"contactInformations\": {\n                    \"email\": \"mike@yopmail.com\"\n                },\n                \"activated\": false,\n                \"createdAt\": \"2023-11-02T13:24:40.667Z\",\n                \"updatedAt\": \"2023-11-02T13:24:40.667Z\",\n                \"__v\": 0\n            },\n            \"vehicle\": {\n                \"_id\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n                \"contract\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n                \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n                \"vin\": \"1HGBH41JXMN109186\",\n                \"brand\": \"toyota\",\n                \"model\": \"yaris\",\n                \"year\": 2017,\n                \"registrationNumber\": \"AB-123-CD\",\n                \"originalInServiceDate\": \"2018-11-03T15:31:05.558Z\",\n                \"contractSubscriptionKm\": 100000,\n                \"createdAt\": \"2023-11-02T15:32:57.883Z\",\n                \"updatedAt\": \"2023-11-02T15:32:57.883Z\",\n                \"__v\": 0\n            },\n            \"insurerActivationDate\": \"2023-11-02T15:53:19.000Z\",\n            \"serialNumber\": \"76BUPWD9R2DCZ3VQS29FAR3TMEFAXEKY\",\n            \"events\": [],\n            \"lastSessions\": [\n                {\n                    \"_id\": \"2d8729cf-e408-4786-a3e3-13aa33eb37d9\",\n                    \"device\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n                    \"start\": \"2023-11-02T08:40:23.600Z\",\n                    \"end\": \"2023-11-02T08:40:32.630Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ],\n    \"count\": 1,\n    \"start\": 0,\n    \"limit\": 10\n}"
+								},
+								{
+									"name": "find all with search value",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/device?value=76BUPWD",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"device"
+											],
+											"query": [
+												{
+													"key": "value",
+													"value": "76BUPWD"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1250"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4e2-xb1QOfsRb8stfPWnyjkVb12JnfU\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 12:59:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n            \"status\": \"PAIRED_INSURER\",\n            \"createdAt\": \"2023-11-01T16:48:57.197Z\",\n            \"updatedAt\": \"2023-11-02T15:53:19.312Z\",\n            \"__v\": 0,\n            \"customer\": {\n                \"_id\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n                \"insurer\": false,\n                \"status\": \"INACTIVE\",\n                \"authorizationServerUserId\": \"4be3d0a7-2124-4555-930f-54d4eae168a8\",\n                \"contactInformations\": {\n                    \"email\": \"mike@yopmail.com\"\n                },\n                \"activated\": false,\n                \"createdAt\": \"2023-11-02T13:24:40.667Z\",\n                \"updatedAt\": \"2023-11-02T13:24:40.667Z\",\n                \"__v\": 0\n            },\n            \"vehicle\": {\n                \"_id\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n                \"contract\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n                \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n                \"vin\": \"1HGBH41JXMN109186\",\n                \"brand\": \"toyota\",\n                \"model\": \"yaris\",\n                \"year\": 2017,\n                \"registrationNumber\": \"AB-123-CD\",\n                \"originalInServiceDate\": \"2018-11-03T15:31:05.558Z\",\n                \"contractSubscriptionKm\": 100000,\n                \"createdAt\": \"2023-11-02T15:32:57.883Z\",\n                \"updatedAt\": \"2023-11-02T15:32:57.883Z\",\n                \"__v\": 0\n            },\n            \"insurerActivationDate\": \"2023-11-02T15:53:19.000Z\",\n            \"serialNumber\": \"76BUPWD9R2DCZ3VQS29FAR3TMEFAXEKY\",\n            \"events\": [],\n            \"lastSessions\": [\n                {\n                    \"_id\": \"2d8729cf-e408-4786-a3e3-13aa33eb37d9\",\n                    \"device\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n                    \"start\": \"2023-11-02T08:40:23.600Z\",\n                    \"end\": \"2023-11-02T08:40:32.630Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ],\n    \"count\": 1,\n    \"start\": 0,\n    \"limit\": 10\n}"
+								}
+							]
+						},
+						{
+							"name": "find one",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJnR2JNbElkWjVZS1hfYVd3NGIyckxDMjJOOXlGd054VGxRTW5qendPeVVRIn0.eyJleHAiOjE2OTg5NzMwMDUsImlhdCI6MTY5ODkzNzAwNSwiYXV0aF90aW1lIjoxNjk4OTM3MDA1LCJqdGkiOiJjZjc0NzE5Zi1jYWNkLTQ2MzAtYjlhNy1jZTQwMjk2NGI2YzIiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNDgwNzMyYzEtOWVjOS00NzQ5LTg5NDMtMmU1YjNjYjU5N2RmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiVWFIZExRWlV1TTRnIiwic2Vzc2lvbl9zdGF0ZSI6IjY3YWYxOWU1LTMwMWEtNDQ0ZS05NTI0LTQ3NjAwZTdjNTUzZiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcnZpc29yLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInN1cGVydmlzb3IiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiNjdhZjE5ZTUtMzAxYS00NDRlLTk1MjQtNDc2MDBlN2M1NTNmIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJ2aXNvci1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJzdXBlcnZpc29yIl0sIm5hbWUiOiJwaWVycm90IGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6InBpZXJyb3RAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoicGllcnJvdCIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJwaWVycm90QHlvcG1haWwuY29tIn0.leTrsOnmJMZo8_i3SQcQT8bzng2jlxeY3gPmq1UJaCPhOm03QymS3lrl_fLCbEEBgw_yn7NQy1aJtilomRGwGCTt_QVoFq8bU18fUtc9xQD0qSRuiNxYOBWbnynmNaPxVNoi5IhnY33qnrpK7_iuNAkZAImpBVao-kUtZiBaiBX3XrkuEG6xPvYLpPea5JuAyoqnWhn6f573ZZU7R2h92LvRejhcJFAITeqt8PwYyJNDKzVEjRmtFh9kq-BxF5rX6Rk9PChukTBL07svK1kiUj2W4-7Ur5R4QLDECXFyWY91K3K23PDTpKhMWeoJmbY5_sGlftQ446u4lYpk8FQYmg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/device/795444ab-531d-4f22-95eb-a276726bfb33",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"device",
+										"795444ab-531d-4f22-95eb-a276726bfb33"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "find one",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/device/795444ab-531d-4f22-95eb-a276726bfb33",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"device",
+												"795444ab-531d-4f22-95eb-a276726bfb33"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "152"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"98-fMruQne0JwXd389GOl/sD5Y+VGY\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 15:41:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n    \"status\": \"INACTIVE\",\n    \"createdAt\": \"2023-11-01T16:48:57.197Z\",\n    \"updatedAt\": \"2023-11-01T16:48:57.197Z\",\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "link a device to a vehicle and customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJnR2JNbElkWjVZS1hfYVd3NGIyckxDMjJOOXlGd054VGxRTW5qendPeVVRIn0.eyJleHAiOjE2OTg5NzMwMDUsImlhdCI6MTY5ODkzNzAwNSwiYXV0aF90aW1lIjoxNjk4OTM3MDA1LCJqdGkiOiJjZjc0NzE5Zi1jYWNkLTQ2MzAtYjlhNy1jZTQwMjk2NGI2YzIiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNDgwNzMyYzEtOWVjOS00NzQ5LTg5NDMtMmU1YjNjYjU5N2RmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiVWFIZExRWlV1TTRnIiwic2Vzc2lvbl9zdGF0ZSI6IjY3YWYxOWU1LTMwMWEtNDQ0ZS05NTI0LTQ3NjAwZTdjNTUzZiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcnZpc29yLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInN1cGVydmlzb3IiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiNjdhZjE5ZTUtMzAxYS00NDRlLTk1MjQtNDc2MDBlN2M1NTNmIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJ2aXNvci1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJzdXBlcnZpc29yIl0sIm5hbWUiOiJwaWVycm90IGRvZSIsInByZWZlcnJlZF91c2VybmFtZSI6InBpZXJyb3RAeW9wbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoicGllcnJvdCIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJwaWVycm90QHlvcG1haWwuY29tIn0.leTrsOnmJMZo8_i3SQcQT8bzng2jlxeY3gPmq1UJaCPhOm03QymS3lrl_fLCbEEBgw_yn7NQy1aJtilomRGwGCTt_QVoFq8bU18fUtc9xQD0qSRuiNxYOBWbnynmNaPxVNoi5IhnY33qnrpK7_iuNAkZAImpBVao-kUtZiBaiBX3XrkuEG6xPvYLpPea5JuAyoqnWhn6f573ZZU7R2h92LvRejhcJFAITeqt8PwYyJNDKzVEjRmtFh9kq-BxF5rX6Rk9PChukTBL07svK1kiUj2W4-7Ur5R4QLDECXFyWY91K3K23PDTpKhMWeoJmbY5_sGlftQ446u4lYpk8FQYmg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"vehicle\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n    \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ROOT_URL}}/device/795444ab-531d-4f22-95eb-a276726bfb33",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"device",
+										"795444ab-531d-4f22-95eb-a276726bfb33"
+									]
+								},
+								"description": "Role Restrictions:  \n\\- Required Role: supervisor/insurer or superadmin"
+							},
+							"response": [
+								{
+									"name": "link a device to a vehicle and customer",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"vehicle\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n    \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ROOT_URL}}/device/795444ab-531d-4f22-95eb-a276726bfb33",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"device",
+												"795444ab-531d-4f22-95eb-a276726bfb33"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "251"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"fb-W499GgDODUCF/XbzRV35s3dkEZQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 15:47:49 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n    \"status\": \"INACTIVE\",\n    \"createdAt\": \"2023-11-01T16:48:57.197Z\",\n    \"updatedAt\": \"2023-11-02T15:47:49.212Z\",\n    \"__v\": 0,\n    \"vehicle\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n    \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "vehicle",
+					"item": [
+						{
+							"name": "find all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzU1MjgsImlhdCI6MTcwMjAzOTUyOCwiYXV0aF90aW1lIjoxNzAyMDM5NTI4LCJqdGkiOiIzODQ3MmFjYy05Mzk3LTQ0M2UtOGJmNS1hMDNiMjU5NTdkM2QiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiOGFhQVpBaXJlekM3Iiwic2Vzc2lvbl9zdGF0ZSI6IjJlMDkyMDllLTA3ODktNGIwMS04N2Y5LTc4N2NjOGMzZWU0NyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiMmUwOTIwOWUtMDc4OS00YjAxLTg3ZjktNzg3Y2M4YzNlZTQ3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Ddpq5QIDqUC3zXPbGMUwsPoMpfoVU4Op0kYmQHORhIRvBLvNyHTxp_0Vy5bkwhUMT-qoL_lx_rtmcG_EYsFzWPDle5J9Ura0LuBqWv52WpIih6SLqupRNu5YVIoZj1UTWK3KpqtDkTMoWIhB98pzp7Frx9P4cxzJyhdhwn9fS5kWt4gD87t1pzYxWBipWVQIEZIFzngUdswpDQRAAwFUlCKyWgu1jxf9W3EUpWcxj0paRUlVbxkGCfmJAY79n-PBD8IYZSXTFaPw3sShnLCauzWgTTbOD58l1kBK4S0yf1xnuV7SPH1VDtrMkbzcQzNl4lACU8qzbt2utkfa8e8w6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/vehicle",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"vehicle"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "find all",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/vehicle",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"vehicle"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "464"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1d0-fZx/vtmxwRD9iJM89wPOuCbli6c\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 14:06:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n            \"contract\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n            \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n            \"vin\": \"1HGBH41JXMN109186\",\n            \"brand\": \"toyota\",\n            \"model\": \"yaris\",\n            \"year\": 2017,\n            \"registrationNumber\": \"AB-123-CD\",\n            \"originalInServiceDate\": \"2018-11-03T15:31:05.558Z\",\n            \"contractSubscriptionKm\": 100000,\n            \"createdAt\": \"2023-11-02T15:32:57.883Z\",\n            \"updatedAt\": \"2023-11-02T15:32:57.883Z\",\n            \"__v\": 0\n        }\n    ],\n    \"count\": 1,\n    \"limit\": 10,\n    \"start\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "find one",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzU1MjgsImlhdCI6MTcwMjAzOTUyOCwiYXV0aF90aW1lIjoxNzAyMDM5NTI4LCJqdGkiOiIzODQ3MmFjYy05Mzk3LTQ0M2UtOGJmNS1hMDNiMjU5NTdkM2QiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiOGFhQVpBaXJlekM3Iiwic2Vzc2lvbl9zdGF0ZSI6IjJlMDkyMDllLTA3ODktNGIwMS04N2Y5LTc4N2NjOGMzZWU0NyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiMmUwOTIwOWUtMDc4OS00YjAxLTg3ZjktNzg3Y2M4YzNlZTQ3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Ddpq5QIDqUC3zXPbGMUwsPoMpfoVU4Op0kYmQHORhIRvBLvNyHTxp_0Vy5bkwhUMT-qoL_lx_rtmcG_EYsFzWPDle5J9Ura0LuBqWv52WpIih6SLqupRNu5YVIoZj1UTWK3KpqtDkTMoWIhB98pzp7Frx9P4cxzJyhdhwn9fS5kWt4gD87t1pzYxWBipWVQIEZIFzngUdswpDQRAAwFUlCKyWgu1jxf9W3EUpWcxj0paRUlVbxkGCfmJAY79n-PBD8IYZSXTFaPw3sShnLCauzWgTTbOD58l1kBK4S0yf1xnuV7SPH1VDtrMkbzcQzNl4lACU8qzbt2utkfa8e8w6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/vehicle/3e4b9e73-c4bf-4245-ab9e-74dba73524f1",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"vehicle",
+										"3e4b9e73-c4bf-4245-ab9e-74dba73524f1"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "find one",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/vehicle/3e4b9e73-c4bf-4245-ab9e-74dba73524f1",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"vehicle",
+												"3e4b9e73-c4bf-4245-ab9e-74dba73524f1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "419"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1a3-XUloWN+1SxykPYp7kTPMl6Gvkus\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 14:00:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n    \"contract\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n    \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n    \"vin\": \"1HGBH41JXMN109186\",\n    \"brand\": \"toyota\",\n    \"model\": \"yaris\",\n    \"year\": 2017,\n    \"registrationNumber\": \"AB-123-CD\",\n    \"originalInServiceDate\": \"2018-11-03T15:31:05.558Z\",\n    \"contractSubscriptionKm\": 100000,\n    \"createdAt\": \"2023-11-02T15:32:57.883Z\",\n    \"updatedAt\": \"2023-11-02T15:32:57.883Z\",\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "find one devices",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDIwNzU1MjgsImlhdCI6MTcwMjAzOTUyOCwiYXV0aF90aW1lIjoxNzAyMDM5NTI4LCJqdGkiOiIzODQ3MmFjYy05Mzk3LTQ0M2UtOGJmNS1hMDNiMjU5NTdkM2QiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiOGFhQVpBaXJlekM3Iiwic2Vzc2lvbl9zdGF0ZSI6IjJlMDkyMDllLTA3ODktNGIwMS04N2Y5LTc4N2NjOGMzZWU0NyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiMmUwOTIwOWUtMDc4OS00YjAxLTg3ZjktNzg3Y2M4YzNlZTQ3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Ddpq5QIDqUC3zXPbGMUwsPoMpfoVU4Op0kYmQHORhIRvBLvNyHTxp_0Vy5bkwhUMT-qoL_lx_rtmcG_EYsFzWPDle5J9Ura0LuBqWv52WpIih6SLqupRNu5YVIoZj1UTWK3KpqtDkTMoWIhB98pzp7Frx9P4cxzJyhdhwn9fS5kWt4gD87t1pzYxWBipWVQIEZIFzngUdswpDQRAAwFUlCKyWgu1jxf9W3EUpWcxj0paRUlVbxkGCfmJAY79n-PBD8IYZSXTFaPw3sShnLCauzWgTTbOD58l1kBK4S0yf1xnuV7SPH1VDtrMkbzcQzNl4lACU8qzbt2utkfa8e8w6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ROOT_URL}}/vehicle/3e4b9e73-c4bf-4245-ab9e-74dba73524f1/device",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"vehicle",
+										"3e4b9e73-c4bf-4245-ab9e-74dba73524f1",
+										"device"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": [
+								{
+									"name": "find one devices",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL}}/vehicle/3e4b9e73-c4bf-4245-ab9e-74dba73524f1/device",
+											"host": [
+												"{{ROOT_URL}}"
+											],
+											"path": [
+												"vehicle",
+												"3e4b9e73-c4bf-4245-ab9e-74dba73524f1",
+												"device"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1305"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"519-N/i+9r2ZIr4dIJWE23BTIlpbqhs\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 14:06:46 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"results\": [\n        {\n            \"_id\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n            \"status\": \"PAIRED_INSURER\",\n            \"createdAt\": \"2023-11-01T16:48:57.197Z\",\n            \"updatedAt\": \"2023-11-02T15:53:19.312Z\",\n            \"__v\": 0,\n            \"customer\": {\n                \"_id\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n                \"insurer\": false,\n                \"status\": \"ACTIVE\",\n                \"authorizationServerUserId\": \"4be3d0a7-2124-4555-930f-54d4eae168a8\",\n                \"contactInformations\": {\n                    \"email\": \"mike@yopmail.com\"\n                },\n                \"activated\": true,\n                \"createdAt\": \"2023-11-02T13:24:40.667Z\",\n                \"updatedAt\": \"2023-11-02T13:24:40.667Z\",\n                \"__v\": 0,\n                \"firstName\": \"mike\",\n                \"lastName\": \"doe\",\n                \"fullName\": \"mike doe\"\n            },\n            \"vehicle\": {\n                \"_id\": \"3e4b9e73-c4bf-4245-ab9e-74dba73524f1\",\n                \"contract\": \"ce8e7910-424f-4e18-bddc-c88017d5b637\",\n                \"customer\": \"d4d6ed02-f792-4d62-9cb8-04120cba796d\",\n                \"vin\": \"1HGBH41JXMN109186\",\n                \"brand\": \"toyota\",\n                \"model\": \"yaris\",\n                \"year\": 2017,\n                \"registrationNumber\": \"AB-123-CD\",\n                \"originalInServiceDate\": \"2018-11-03T15:31:05.558Z\",\n                \"contractSubscriptionKm\": 100000,\n                \"createdAt\": \"2023-11-02T15:32:57.883Z\",\n                \"updatedAt\": \"2023-11-02T15:32:57.883Z\",\n                \"__v\": 0\n            },\n            \"insurerActivationDate\": \"2023-11-02T15:53:19.000Z\",\n            \"serialNumber\": \"76BUPWD9R2DCZ3VQS29FAR3TMEFAXEKY\",\n            \"events\": [],\n            \"lastSessions\": [\n                {\n                    \"_id\": \"2d8729cf-e408-4786-a3e3-13aa33eb37d9\",\n                    \"device\": \"795444ab-531d-4f22-95eb-a276726bfb33\",\n                    \"start\": \"2023-11-02T08:40:23.600Z\",\n                    \"end\": \"2023-11-02T08:40:32.630Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ],\n    \"count\": 1,\n    \"start\": 0,\n    \"limit\": 10\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "object-storage",
+					"item": [
+						{
+							"name": "generate an upload url for a document",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDI4MzczNzAsImlhdCI6MTcwMjgwMTM3MCwiYXV0aF90aW1lIjoxNzAyODAxMzcwLCJqdGkiOiIwZjZjMzU2ZS0zZjkzLTQxNmItOGY1OS1jYzQ1M2Q2OGRkZGUiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiTDJ2WXQ0MW5xWllwIiwic2Vzc2lvbl9zdGF0ZSI6ImVmNTBjY2ViLTAxZjctNGY1NS1hNTViLWZkNDFjNTczMjI3NCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZWY1MGNjZWItMDFmNy00ZjU1LWE1NWItZmQ0MWM1NzMyMjc0IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.Th1Xqd7ribRzgMT_uwHqnSWAEvhKtGuTbX5k6GmJs8vaHI_zRDcj79C7geNv5j1pusZlOVhoe7aGqqW_F7PbH8_2h5V0efyb0E_I2TEAoHjRul1Hmo_thfjhE-9mdpbzwAJC4NNoaslFyp3vX7XZ3JnwC699wMKpgdSkyhKFt71qP0fTzr4EGhm2lrZNQTiPy3XwakRozWNdWuPeNykC4VcCO_2gsJpSI7g0tRI1Om2GX3ZDxDWp6c38ExW3O50cvQz0lgs98BMRu0v2fchSntGthB7T0zzkaxw5TZsw9BzezehKaLf_2YVwstrpeUqUeaGsMU-75weVt26Pg8oBaQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fileKey\": \"customer/payments/terms-of-sales\",\n    \"fileName\": \"test.pdf\",\n    \"mimetype\": \"application/pdf\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ROOT_URL}}/object-storage/upload",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"object-storage",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "generate a download/view url for a document",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE2OTk2NjM4NTAsImlhdCI6MTY5OTYyNzg1MCwiYXV0aF90aW1lIjoxNjk5NjI3ODUwLCJqdGkiOiJiOWZlYmQyZC01MDE5LTRiMzItOTVkZi0zMTExNWExNmJkY2QiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNWU0M2RiZmQtNDc1MS00ZDg0LTgzMTItMDA2MDk2NDhlMjI0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiREIzZWpxSndEWTB2Iiwic2Vzc2lvbl9zdGF0ZSI6ImRkMjc3ZjU4LTM4MDYtNGIwYi05OWY4LTQ3Y2M4YmUwMzI1NCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcnZpc29yLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInN1cGVydmlzb3IiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZGQyNzdmNTgtMzgwNi00YjBiLTk5ZjgtNDdjYzhiZTAzMjU0IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJ2aXNvci1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJzdXBlcnZpc29yIl0sIm5hbWUiOiJqYWNrbyBkb2UiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJqYWNrb0B5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJqYWNrbyIsImZhbWlseV9uYW1lIjoiZG9lIiwiZW1haWwiOiJqYWNrb0B5b3BtYWlsLmNvbSJ9.iTjP3CUcymB2DwQE9yfIoTo3XHEHD8NjdACjddHDS7mwODooZSArokn2AOFP80d20XLcfxhHkH-SIVrq3KRhs9MAhKsnPHOd1qdcF_b9oWb7A-7c1sJezU5axayTmV2pDl2FnFDjOEumBzsQ9Z7e-EsxiDr7enySy4Dc15Dq3Ynof-reQplcYOBlZBoWWO0SswZqQIYHqoQ9z6QmG1lCRj1PzQW6DGRu0yVWRqh_tzaE3Ur8awUl90y2YV6yxebJo9en-8fyCyP40-6rwVIQLcYg0GIEMMpXHDutzXSf8aosX8EdHJaAnPfLcMzv0bd_fPkXnXlAagHKBe-xJ6TvgQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fileKey\": \"customer/identity/residency-proof\",\n    \"fileName\": \"contract.pdf\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ROOT_URL}}/object-storage/download",
+									"host": [
+										"{{ROOT_URL}}"
+									],
+									"path": [
+										"object-storage",
+										"download"
+									]
+								},
+								"description": "Role Restrictions:  \nWhen making request as a user, data is scoped to the user data"
+							},
+							"response": []
+						},
+						{
+							"name": "store a file on object storage solution using a presigned url",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "/Users/antoine/Downloads/26a70e49-9e7f-4e36-9c7b-f0b1fadcea12_test.pdf"
+									}
+								},
+								"url": {
+									"raw": "https://storage.googleapis.com/andrew-documents/contract/contract/26a70e49-9e7f-4e36-9c7b-f0b1fadcea12_test.pdf?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=andrew-storage%40sinuous-athlete-403218.iam.gserviceaccount.com%2F20231217%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20231217T082709Z&X-Goog-Expires=900&X-Goog-SignedHeaders=content-type%3Bhost&X-Goog-Signature=6699512b34102bc9de86ad96429d75d9029cda27c2832623b22241348dd7e6cc38485bb82403bf69f49669cedbc14eb61d30d2e8f31a4e782827d667d09a764aa472e856b276f075535f6d8eb45642b71f19780e6fdf73a6e1b249e0fd55e88d6de7772d8ef5fde5439ea5dc28d91c421984a1f7203a3daa0f400f3c8be43ac61d8a82eaa48af50fe3b5a36018e3a5e254bc3101fd3bc69ea5495bdf0e1a60a9111e0a48d8ba7387df878f2fdb7fd5af292de3e1e627acf55dbd862d583b48e79e3b46c65f6a54a138f8de5e02ce57f3f388ddd2cf0b053af580deab17baf0bcf509f43d60496dc324576189536bb0e03b69773994181d5317fa16630a8c4259",
+									"protocol": "https",
+									"host": [
+										"storage",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"andrew-documents",
+										"contract",
+										"contract",
+										"26a70e49-9e7f-4e36-9c7b-f0b1fadcea12_test.pdf"
+									],
+									"query": [
+										{
+											"key": "X-Goog-Algorithm",
+											"value": "GOOG4-RSA-SHA256"
+										},
+										{
+											"key": "X-Goog-Credential",
+											"value": "andrew-storage%40sinuous-athlete-403218.iam.gserviceaccount.com%2F20231217%2Fauto%2Fstorage%2Fgoog4_request"
+										},
+										{
+											"key": "X-Goog-Date",
+											"value": "20231217T082709Z"
+										},
+										{
+											"key": "X-Goog-Expires",
+											"value": "900"
+										},
+										{
+											"key": "X-Goog-SignedHeaders",
+											"value": "content-type%3Bhost"
+										},
+										{
+											"key": "X-Goog-Signature",
+											"value": "6699512b34102bc9de86ad96429d75d9029cda27c2832623b22241348dd7e6cc38485bb82403bf69f49669cedbc14eb61d30d2e8f31a4e782827d667d09a764aa472e856b276f075535f6d8eb45642b71f19780e6fdf73a6e1b249e0fd55e88d6de7772d8ef5fde5439ea5dc28d91c421984a1f7203a3daa0f400f3c8be43ac61d8a82eaa48af50fe3b5a36018e3a5e254bc3101fd3bc69ea5495bdf0e1a60a9111e0a48d8ba7387df878f2fdb7fd5af292de3e1e627acf55dbd862d583b48e79e3b46c65f6a54a138f8de5e02ce57f3f388ddd2cf0b053af580deab17baf0bcf509f43d60496dc324576189536bb0e03b69773994181d5317fa16630a8c4259"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "## Global workflow\n\n1. As a superadmin i register devices and flash credentials on the devices firmware (IOT)\n2. As a new user from the landing page offering the subscription to Andrew's insurance products i click on call to action to create my customer account and i am redirected back to the application logged in\n3. As a logged in user i create a new subscription application and fill out the required informations and documents\n4. As a logged in user i submit my subscription application for review\n5. As an logged in insurer i review and validate the subscription application generating a contract attached checkout url\n6. As the system i takes informations from the subscription application to register a new contract and it's related vehicles generating checkout url using a the configured payment gateway (stripe)\n7. As the system i receive confirmation of the user subscription and update the contract status accordingly\n8. As a logged in insurer i select a device from the available device pool and link the device to a vehicle\n9. As a logged in insurer i activate the selected/linked device\n10. As a logged in insurer i send the device to the user address by mail\n11. As a logged in user i receive the device\n12. As a logged in user i activate the device by plugging it into the obd plug of my vehicle\n13. As an authorized device i verify the vehicle VIN is valid in the system\n14. As the system i validate the device from a customer point of view\n15. As a user, i am now happy i am insured\n16. As the device i collect vehicle metrics and send them to the system periodically\n17. As the system i classify the vehicle driver behaviour\n18. As the system and according to the vehcile driver behaviour classification i grant insurance discount on the user susbscription.\n    \n\n## Subscription application and Contract status workflow\n\nI. A customer create a subscription application with a status of PENDING  \nII. when all informations filled and the customer wants to apply it confirms it subscription application and asks for a review of it, the status moved from PENDING to REVIEWING  \nIII. An insurer review the subscription application and can directly update the data if wanted, or finalize the subscription by applying a status:\n\n1. PAYMENT_PENDING: initiate the payment/checkout workflow by generating a checkout url\n    - system register a contract with an INACTIVE status and vehicles linked to the contract from data present in subscription application\n    - customer click on the generated checkout url\n    - contract status change from INACTIVE to ACTIVE upon successful subscription initialization\n2. REJECTED: customer can create a new susbcription application the current one won't be changed anymore\n3. TO_AMMEND: customer must update it's subscription application\n    - customer can ammend its subscription application and restart from step II\n\n## Roles\n\n- superadmin:\n    - devices WRITE + DELETE\n    - all below roles\n- supervisor:\n    - devices READ\n    - devices to contract link\n    - users READ + WRITE + UPDATE + DELETE\n    - contracts READ + WRITE + UPDATE + DELETE\n    - vehicles READ + WRITE + UPDATE + DELETE\n    - subscription application READ + WRITE + UPDATE + DELETE\n- user:\n    - devices READ own data\n    - contracts READ own data\n    - vehicle READ own data\n    - susbscription application WRITE + UPDATE\n\n## Test users and roles\n\n- [elliot.billie@yopmail.com](https://mailto:elliot.billie@yopmail.com) - superadmin\n- [jacko@yopmail.com](https://mailto:jacko@yopmail.com) - insurer aka supervisor (keycloak)\n- [jack.williams@yopmail.com](https://mailto:jack.williams@yopmail.com) - user\n- [mike@yopmail.com](https://mailto:mike@yopmail.com) - user"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ROOT_URL",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		}
+	]
+}

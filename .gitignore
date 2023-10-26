@@ -33,3 +33,16 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Mongo DATA
+mongo_data
+
+# mongo init scripts
+mongo_scripts
+
+# env files
+.env.*
+.env
+
+# kubernetes manifests
+k8s

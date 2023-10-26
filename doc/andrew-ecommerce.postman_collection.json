@@ -1,0 +1,607 @@
+{
+	"info": {
+		"_postman_id": "7734fef3-ad8b-4c7e-b445-348ab873c6d1",
+		"name": "andrew-ecommerce",
+		"description": "A webservice containing logic to handle products, payments and subscriptions for the Andrew Insurance product\n\nMultiple listeners are set up for this microservice:  \n- Public listener: User facing aka frontend authenticated and authorized endpoints\n- Private listener: Unauthenticated not accessible from the internet endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13953520"
+	},
+	"item": [
+		{
+			"name": "PUBLIC LISTENER",
+			"item": [
+				{
+					"name": "API",
+					"item": [
+						{
+							"name": "product",
+							"item": [
+								{
+									"name": "create a product using the STRIPE gateway",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDMyODM3NjIsImlhdCI6MTcwMzI0Nzc2MywiYXV0aF90aW1lIjoxNzAzMjQ3NzYyLCJqdGkiOiIyZjBkNmQ0Yy0yYzllLTRhNTQtOTg2Mi02OTJhMjMzMDc2ZGIiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiYnFCRndHc2dOVllkIiwic2Vzc2lvbl9zdGF0ZSI6ImRjZTI5NGIzLTM0NDctNGU2Mi1hZDdmLWIyNTZjZjMxZGZlNSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZGNlMjk0YjMtMzQ0Ny00ZTYyLWFkN2YtYjI1NmNmMzFkZmU1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.OkCcmExu19I5ppYMA7k1wqKFGFPzDNcKw1zdVNIlGrdpp83uJ8CsBARtjbW8vw_bT1vk-NJnH3l9AupL2g2GgzyE7QHCA21t-fd7nLg825E6ET5OpqptWTOaFpLrSP3dQgVD4cKHdHOYQwqwKp3gW9lyrGumtiBkHZ6WBYFShOnDhEXQc2wuOpiinaTWhqrJTWnNyTAa0rv49a9Vn9otAJ9Rxa5ikvLAXsykLds0HrZGg9SY957OdALDGXxCiWNcWaYEWntDzJKO5Fvas5aP65fJ1T1vtRPZKKj3xyY3FLvMCu7Rrbq703GG4EC9lfBIHS57ADTBT92kPkMbbwklMA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"vehicle insurance andrew\",\n    \"currency\": \"EUR\",\n    \"price\": 117.50,\n    \"description\": \"vehicle insurance andrew\",\n    \"subscription\": true,\n    \"periodicity\": \"month\",\n    \"active\": true,\n    \"gateway\": \"STRIPE\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ROOT_URL_PUBLIC_LISTENER}}/product",
+											"host": [
+												"{{ROOT_URL_PUBLIC_LISTENER}}"
+											],
+											"path": [
+												"product"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "create a product using the STRIPE gateway",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"vehicle insurance andrew\",\n    \"currency\": \"EUR\",\n    \"price\": 117.50,\n    \"description\": \"vehicle insurance andrew\",\n    \"subscription\": true,\n    \"periodicity\": \"month\",\n    \"active\": true,\n    \"gateway\": \"STRIPE\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{ROOT_URL_PUBLIC_LISTENER}}/product",
+													"host": [
+														"{{ROOT_URL_PUBLIC_LISTENER}}"
+													],
+													"path": [
+														"product"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "355"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"163-sn7mWL6bLCMMVCW9Tsy+pbHFwAE\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 22 Dec 2023 12:23:02 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"name\": \"vehicle insurance andrew\",\n    \"currency\": \"EUR\",\n    \"price\": 117.5,\n    \"subscription\": true,\n    \"periodicity\": \"month\",\n    \"description\": \"vehicle insurance andrew\",\n    \"gateway\": \"STRIPE\",\n    \"gatewayResourceId\": \"prod_PEawgpASvJ6VV4\",\n    \"active\": true,\n    \"_id\": \"70b1fcba-3953-4ea3-9f66-8f7f218dd00a\",\n    \"createdAt\": \"2023-12-22T12:23:02.756Z\",\n    \"updatedAt\": \"2023-12-22T12:23:02.756Z\",\n    \"__v\": 0\n}"
+										}
+									]
+								},
+								{
+									"name": "retrieve one product",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL_PUBLIC_LISTENER}}/product/70b1fcba-3953-4ea3-9f66-8f7f218dd00a",
+											"host": [
+												"{{ROOT_URL_PUBLIC_LISTENER}}"
+											],
+											"path": [
+												"product",
+												"70b1fcba-3953-4ea3-9f66-8f7f218dd00a"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "retrieve one product",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{ROOT_URL_PUBLIC_LISTENER}}/product/70b1fcba-3953-4ea3-9f66-8f7f218dd00a",
+													"host": [
+														"{{ROOT_URL_PUBLIC_LISTENER}}"
+													],
+													"path": [
+														"product",
+														"70b1fcba-3953-4ea3-9f66-8f7f218dd00a"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "355"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"163-dyJ+AyweKuxBX1QW5a6eM548zc4\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 22 Dec 2023 12:24:12 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"_id\": \"70b1fcba-3953-4ea3-9f66-8f7f218dd00a\",\n    \"name\": \"vehicle insurance andrew\",\n    \"currency\": \"EUR\",\n    \"price\": 117.5,\n    \"subscription\": true,\n    \"periodicity\": \"month\",\n    \"description\": \"vehicle insurance andrew\",\n    \"gateway\": \"STRIPE\",\n    \"gatewayResourceId\": \"prod_PEawgpASvJ6VV4\",\n    \"active\": true,\n    \"createdAt\": \"2023-12-22T12:23:02.756Z\",\n    \"updatedAt\": \"2023-12-22T12:23:02.756Z\",\n    \"__v\": 0\n}"
+										}
+									]
+								},
+								{
+									"name": "update product",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDMyODM3NjIsImlhdCI6MTcwMzI0Nzc2MywiYXV0aF90aW1lIjoxNzAzMjQ3NzYyLCJqdGkiOiIyZjBkNmQ0Yy0yYzllLTRhNTQtOTg2Mi02OTJhMjMzMDc2ZGIiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiYnFCRndHc2dOVllkIiwic2Vzc2lvbl9zdGF0ZSI6ImRjZTI5NGIzLTM0NDctNGU2Mi1hZDdmLWIyNTZjZjMxZGZlNSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZGNlMjk0YjMtMzQ0Ny00ZTYyLWFkN2YtYjI1NmNmMzFkZmU1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.OkCcmExu19I5ppYMA7k1wqKFGFPzDNcKw1zdVNIlGrdpp83uJ8CsBARtjbW8vw_bT1vk-NJnH3l9AupL2g2GgzyE7QHCA21t-fd7nLg825E6ET5OpqptWTOaFpLrSP3dQgVD4cKHdHOYQwqwKp3gW9lyrGumtiBkHZ6WBYFShOnDhEXQc2wuOpiinaTWhqrJTWnNyTAa0rv49a9Vn9otAJ9Rxa5ikvLAXsykLds0HrZGg9SY957OdALDGXxCiWNcWaYEWntDzJKO5Fvas5aP65fJ1T1vtRPZKKj3xyY3FLvMCu7Rrbq703GG4EC9lfBIHS57ADTBT92kPkMbbwklMA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"vehicle insurance andrew\",\n    \"currency\": \"EUR\",\n    \"price\": 117.50,\n    \"description\": \"vehicle insurance andrew\",\n    \"subscription\": true,\n    \"periodicity\": \"month\",\n    \"active\": true,\n    \"gateway\": \"STRIPE\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ROOT_URL_PUBLIC_LISTENER}}/product/70b1fcba-3953-4ea3-9f66-8f7f218dd00a",
+											"host": [
+												"{{ROOT_URL_PUBLIC_LISTENER}}"
+											],
+											"path": [
+												"product",
+												"70b1fcba-3953-4ea3-9f66-8f7f218dd00a"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "update product",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"vehicle insurance andrew\",\n    \"currency\": \"EUR\",\n    \"price\": 117.50,\n    \"description\": \"vehicle insurance andrew\",\n    \"subscription\": true,\n    \"periodicity\": \"month\",\n    \"active\": true,\n    \"gateway\": \"STRIPE\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{ROOT_URL_PUBLIC_LISTENER}}/product/70b1fcba-3953-4ea3-9f66-8f7f218dd00a",
+													"host": [
+														"{{ROOT_URL_PUBLIC_LISTENER}}"
+													],
+													"path": [
+														"product",
+														"70b1fcba-3953-4ea3-9f66-8f7f218dd00a"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "355"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"163-dyJ+AyweKuxBX1QW5a6eM548zc4\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 22 Dec 2023 12:41:04 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"_id\": \"70b1fcba-3953-4ea3-9f66-8f7f218dd00a\",\n    \"name\": \"vehicle insurance andrew\",\n    \"currency\": \"EUR\",\n    \"price\": 117.5,\n    \"subscription\": true,\n    \"periodicity\": \"month\",\n    \"description\": \"vehicle insurance andrew\",\n    \"gateway\": \"STRIPE\",\n    \"gatewayResourceId\": \"prod_PEawgpASvJ6VV4\",\n    \"active\": true,\n    \"createdAt\": \"2023-12-22T12:23:02.756Z\",\n    \"updatedAt\": \"2023-12-22T12:23:02.756Z\",\n    \"__v\": 0\n}"
+										}
+									]
+								},
+								{
+									"name": "list all products",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ROOT_URL_PUBLIC_LISTENER}}/product",
+											"host": [
+												"{{ROOT_URL_PUBLIC_LISTENER}}"
+											],
+											"path": [
+												"product"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "list all products for the STRIPE gateway",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{ROOT_URL_PUBLIC_LISTENER}}/product?gateway=STRIPE",
+													"host": [
+														"{{ROOT_URL_PUBLIC_LISTENER}}"
+													],
+													"path": [
+														"product"
+													],
+													"query": [
+														{
+															"key": "gateway",
+															"value": "STRIPE"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "400"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"190-2tGnfjUSOZuGBJUUq76NGDdoKkQ\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 22 Dec 2023 12:26:23 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"results\": [\n        {\n            \"_id\": \"70b1fcba-3953-4ea3-9f66-8f7f218dd00a\",\n            \"name\": \"vehicle insurance andrew\",\n            \"currency\": \"EUR\",\n            \"price\": 117.5,\n            \"subscription\": true,\n            \"periodicity\": \"month\",\n            \"description\": \"vehicle insurance andrew\",\n            \"gateway\": \"STRIPE\",\n            \"gatewayResourceId\": \"prod_PEawgpASvJ6VV4\",\n            \"active\": true,\n            \"createdAt\": \"2023-12-22T12:23:02.756Z\",\n            \"updatedAt\": \"2023-12-22T12:23:02.756Z\",\n            \"__v\": 0\n        }\n    ],\n    \"count\": 1,\n    \"start\": 0,\n    \"limit\": 10\n}"
+										},
+										{
+											"name": "list all products",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{ROOT_URL_PUBLIC_LISTENER}}/product",
+													"host": [
+														"{{ROOT_URL_PUBLIC_LISTENER}}"
+													],
+													"path": [
+														"product"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "400"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"190-2tGnfjUSOZuGBJUUq76NGDdoKkQ\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 22 Dec 2023 12:26:56 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"results\": [\n        {\n            \"_id\": \"70b1fcba-3953-4ea3-9f66-8f7f218dd00a\",\n            \"name\": \"vehicle insurance andrew\",\n            \"currency\": \"EUR\",\n            \"price\": 117.5,\n            \"subscription\": true,\n            \"periodicity\": \"month\",\n            \"description\": \"vehicle insurance andrew\",\n            \"gateway\": \"STRIPE\",\n            \"gatewayResourceId\": \"prod_PEawgpASvJ6VV4\",\n            \"active\": true,\n            \"createdAt\": \"2023-12-22T12:23:02.756Z\",\n            \"updatedAt\": \"2023-12-22T12:23:02.756Z\",\n            \"__v\": 0\n        }\n    ],\n    \"count\": 1,\n    \"start\": 0,\n    \"limit\": 10\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PRIVATE LISTENER",
+			"item": [
+				{
+					"name": "API",
+					"item": [
+						{
+							"name": "gateway",
+							"item": [
+								{
+									"name": "create a checkout url",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDMyODM3NjIsImlhdCI6MTcwMzI0Nzc2MywiYXV0aF90aW1lIjoxNzAzMjQ3NzYyLCJqdGkiOiIyZjBkNmQ0Yy0yYzllLTRhNTQtOTg2Mi02OTJhMjMzMDc2ZGIiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiYnFCRndHc2dOVllkIiwic2Vzc2lvbl9zdGF0ZSI6ImRjZTI5NGIzLTM0NDctNGU2Mi1hZDdmLWIyNTZjZjMxZGZlNSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZGNlMjk0YjMtMzQ0Ny00ZTYyLWFkN2YtYjI1NmNmMzFkZmU1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.OkCcmExu19I5ppYMA7k1wqKFGFPzDNcKw1zdVNIlGrdpp83uJ8CsBARtjbW8vw_bT1vk-NJnH3l9AupL2g2GgzyE7QHCA21t-fd7nLg825E6ET5OpqptWTOaFpLrSP3dQgVD4cKHdHOYQwqwKp3gW9lyrGumtiBkHZ6WBYFShOnDhEXQc2wuOpiinaTWhqrJTWnNyTAa0rv49a9Vn9otAJ9Rxa5ikvLAXsykLds0HrZGg9SY957OdALDGXxCiWNcWaYEWntDzJKO5Fvas5aP65fJ1T1vtRPZKKj3xyY3FLvMCu7Rrbq703GG4EC9lfBIHS57ADTBT92kPkMbbwklMA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"mike@yopmail.com\",\n    \"gateway\": \"STRIPE\",\n    \"fullName\": \"mike doe\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ROOT_URL_PRIVATE_LISTENER}}/gateway/checkout",
+											"host": [
+												"{{ROOT_URL_PRIVATE_LISTENER}}"
+											],
+											"path": [
+												"gateway",
+												"checkout"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "create a customer",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4QjA0NThEWmZJbURFR3QtYzcyTl9kWTZMdmhpWmZRQWZDYUNIZ3RRYWtRIn0.eyJleHAiOjE3MDMyODM3NjIsImlhdCI6MTcwMzI0Nzc2MywiYXV0aF90aW1lIjoxNzAzMjQ3NzYyLCJqdGkiOiIyZjBkNmQ0Yy0yYzllLTRhNTQtOTg2Mi02OTJhMjMzMDc2ZGIiLCJpc3MiOiJodHRwczovL2xvZ2luLnN0dWRlbnRzLWVwaXRlY2gub3ZoL3JlYWxtcy9hbmRyZXciLCJhdWQiOlsiYW5kcmV3LWFwcCIsImFjY291bnQiXSwic3ViIjoiNzc0MjZhYTEtZjdjMS00NDQzLWIzMGMtYTUwNGUzMDBlNDkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5kcmV3LWFwcCIsIm5vbmNlIjoiYnFCRndHc2dOVllkIiwic2Vzc2lvbl9zdGF0ZSI6ImRjZTI5NGIzLTM0NDctNGU2Mi1hZDdmLWIyNTZjZjMxZGZlNSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1zdXBlcmFkbWluLXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJzdXBlcmFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZGNlMjk0YjMtMzQ0Ny00ZTYyLWFkN2YtYjI1NmNmMzFkZmU1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImRlZmF1bHQtc3VwZXJhZG1pbi1yb2xlcyIsIm9mZmxpbmVfYWNjZXNzIiwic3VwZXJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl0sIm5hbWUiOiJlbGxpb3QgYmlsbGllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJlbGxpb3QiLCJmYW1pbHlfbmFtZSI6ImJpbGxpZSIsImVtYWlsIjoiZWxsaW90LmJpbGxpZUB5b3BtYWlsLmNvbSJ9.OkCcmExu19I5ppYMA7k1wqKFGFPzDNcKw1zdVNIlGrdpp83uJ8CsBARtjbW8vw_bT1vk-NJnH3l9AupL2g2GgzyE7QHCA21t-fd7nLg825E6ET5OpqptWTOaFpLrSP3dQgVD4cKHdHOYQwqwKp3gW9lyrGumtiBkHZ6WBYFShOnDhEXQc2wuOpiinaTWhqrJTWnNyTAa0rv49a9Vn9otAJ9Rxa5ikvLAXsykLds0HrZGg9SY957OdALDGXxCiWNcWaYEWntDzJKO5Fvas5aP65fJ1T1vtRPZKKj3xyY3FLvMCu7Rrbq703GG4EC9lfBIHS57ADTBT92kPkMbbwklMA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"jacko@yopmail.com\",\n    \"gateway\": \"STRIPE\",\n    \"fullName\": \"jacko doe\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ROOT_URL_PRIVATE_LISTENER}}/gateway/customer",
+											"host": [
+												"{{ROOT_URL_PRIVATE_LISTENER}}"
+											],
+											"path": [
+												"gateway",
+												"customer"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "create a customer",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"email\": \"mike@yopmail.com\",\n    \"gateway\": \"STRIPE\",\n    \"fullName\": \"mike doe\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{ROOT_URL_PRIVATE_LISTENER}}/gateway/customer",
+													"host": [
+														"{{ROOT_URL_PRIVATE_LISTENER}}"
+													],
+													"path": [
+														"gateway",
+														"customer"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "45"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2d-TzqGaG8wOTDu4Yc/H4cjUa+DJZs\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 22 Dec 2023 12:58:20 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"3dd27c0d-39a7-4448-8620-eb015a5ca52b\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ROOT_URL_PUBLIC_LISTENER",
+			"value": "http://localhost:3000/api"
+		},
+		{
+			"key": "ROOT_URL_PRIVATE_LISTENER",
+			"value": "http://localhost:3001/api",
+			"type": "string"
+		}
+	]
+}
