@@ -27,6 +27,7 @@ import { EcommerceService } from 'src/ecommerce/ecommerce/ecommerce.service';
 import { EcommerceGateway } from 'src/lib/interfaces/ecommerce-gateway.enum';
 import { ContractStatus } from 'src/lib/interfaces/contract-status.enum';
 import { OpensearchService } from 'src/opensearch/opensearch/opensearch.service';
+import { CustomerDocument } from 'src/customer/customer/customer.schemas';
 
 @Injectable()
 export class ContractService implements MongooseJoinable {
@@ -220,19 +221,23 @@ export class ContractService implements MongooseJoinable {
     return await contract.save();
   }
 
-  async findOne(filters: FilterQuery<Contract>): Promise<ContractDocument> {
+  async findOne(
+    filters: FilterQuery<Contract>,
+  ): Promise<ContractDocument & { customer: CustomerDocument }> {
     const contractExists = await this.exists(filters);
     if (!contractExists) {
       throw new NotFoundException(`contract does not exists`);
     }
-    return this.contractModel.findOne(filters);
+    return this.contractModel.findOne(filters).populate('customer');
   }
 
   async findAll(
     filters: FilterQuery<Contract>,
     pagination: Pagination,
     sortFilters: SortFilters,
-  ): Promise<PaginatedResults<ContractDocument>> {
+  ): Promise<
+    PaginatedResults<ContractDocument & { customer: CustomerDocument }>
+  > {
     const results = await this.contractModel
       .aggregate([
         {
@@ -249,6 +254,19 @@ export class ContractService implements MongooseJoinable {
                 $count: 'count',
               },
             ],
+          },
+        },
+        {
+          $lookup: {
+            from: this.customerService.getCollectionName(),
+            localField: 'customer',
+            foreignField: '_id',
+            as: 'customers',
+          },
+        },
+        {
+          $addFields: {
+            customer: { $arrayElemAt: ['$customers', 0] },
           },
         },
         {
