@@ -63,9 +63,12 @@ export class DeviceController {
   ])
   @Get(':id')
   findOne(@Param('id') deviceId: string) {
-    return this.deviceService.findOne({
-      _id: deviceId,
-    });
+    return this.deviceService.findOne(
+      {
+        _id: deviceId,
+      },
+      ['customer', 'vehicle'],
+    );
   }
 
   @KeycloakRoles([KeycloakAvailableRoles.SUPERADMIN])
