@@ -30,6 +30,8 @@ import { MongooseJoinable } from 'src/lib/interfaces/mongoose-joinable.interface
 import { ObjectStorageService } from 'src/object-storage/object-storage/object-storage.service';
 import { EcommerceService } from 'src/ecommerce/ecommerce/ecommerce.service';
 import { EcommerceGateway } from 'src/lib/interfaces/ecommerce-gateway.enum';
+import { SubscriptionApplicationDocument } from 'src/subscription-application/subscription-application/subscription-application.schemas';
+import { SubscriptionApplicationService } from 'src/subscription-application/subscription-application/subscription-application.service';
 
 @Injectable()
 export class CustomerService implements MongooseJoinable {
@@ -42,6 +44,8 @@ export class CustomerService implements MongooseJoinable {
     private readonly vehicleService: VehicleService,
     @Inject(forwardRef(() => DeviceService))
     private readonly deviceService: DeviceService,
+    @Inject(forwardRef(() => SubscriptionApplicationService))
+    private readonly subscriptionApplicationService: SubscriptionApplicationService,
     @Inject(forwardRef(() => KeycloakAdminService))
     private readonly keycloakAdminService: KeycloakAdminService,
     @Inject(forwardRef(() => ObjectStorageService))
@@ -137,6 +141,23 @@ export class CustomerService implements MongooseJoinable {
       throw new BadRequestException(`customer ${customerId} must exists`);
     }
     return this.contractService.findAll(filters, pagination, sortFilters);
+  }
+
+  async findOneSubscriptionApplications(
+    customerId: string,
+    filters: FilterQuery<Vehicle>,
+    pagination: Pagination,
+    sortFilters: SortFilters,
+  ): Promise<PaginatedResults<SubscriptionApplicationDocument>> {
+    const customerExists = await this.exists({ _id: customerId });
+    if (!customerExists) {
+      throw new BadRequestException(`customer ${customerId} must exists`);
+    }
+    return this.subscriptionApplicationService.findAll(
+      filters,
+      pagination,
+      sortFilters,
+    );
   }
 
   async findOneVehicles(

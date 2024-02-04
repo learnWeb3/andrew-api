@@ -231,6 +231,41 @@ export class CustomerController {
     );
   }
 
+  @RestrictForRoleAndResource({
+    [KeycloakAvailableRoles.USER]: {
+      [ResourceType.CUSTOMER]: async (_model, request) => {
+        const check = request.params.id === request.user._id;
+        if (!check) {
+          throw new ConflictException(
+            `user account must be authenticated user`,
+          );
+        }
+        return check;
+      },
+    },
+  })
+  @UseGuards(RectrictForRoleAndResourceGuard)
+  @KeycloakRoles([
+    KeycloakAvailableRoles.INSURER,
+    KeycloakAvailableRoles.SUPERADMIN,
+    KeycloakAvailableRoles.USER,
+  ])
+  @UseGuards(KeycloakAuthGuard)
+  @Get(':id/subscription-application')
+  findOneSubscriptionApplications(
+    @Param('id') customerId: string,
+    @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
+    @Paginated() pagination: Pagination,
+    @SortFiltered() sortFilters: SortFilters,
+  ) {
+    return this.customerService.findOneSubscriptionApplications(
+      customerId,
+      { ...queryFilters, customer: customerId },
+      pagination,
+      sortFilters,
+    );
+  }
+
   @KeycloakRoles([
     KeycloakAvailableRoles.USER,
     KeycloakAvailableRoles.INSURER,

@@ -8,6 +8,7 @@ import { DeviceModule } from 'src/device/device.module';
 import { KeycloakModule } from 'src/keycloak/keycloak.module';
 import { ObjectStorageModule } from 'src/object-storage/object-storage.module';
 import { EcommerceModule } from 'src/ecommerce/ecommerce.module';
+import { SubscriptionApplicationModule } from 'src/subscription-application/subscription-application.module';
 
 @Global()
 @Module({
@@ -26,6 +27,7 @@ import { EcommerceModule } from 'src/ecommerce/ecommerce.module';
     forwardRef(() => KeycloakModule),
     forwardRef(() => ObjectStorageModule),
     forwardRef(() => EcommerceModule),
+    forwardRef(() => SubscriptionApplicationModule),
   ],
 })
 export class CustomerModule {}
