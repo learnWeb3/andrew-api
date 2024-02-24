@@ -99,6 +99,29 @@ export const SubscriptionApplicationContractSchema =
 
 @Schema({
   timestamps: true,
+  _id: false,
+})
+export class SubscriptionApplicationStatusHistoryItem {
+  @Prop({
+    type: mongoose.Schema.Types.String,
+    enum: SubscriptionApplicationStatus,
+    default: SubscriptionApplicationStatus.PENDING,
+  })
+  status: SubscriptionApplicationStatus;
+  @Prop({
+    type: mongoose.Schema.Types.String,
+  })
+  comment: string;
+}
+
+export type SubscriptionApplicationStatusHistoryItemDocument =
+  HydratedDocument<SubscriptionApplicationStatusHistoryItem>;
+
+export const SubscriptionApplicationStatusHistoryItemSchema =
+  SchemaFactory.createForClass(SubscriptionApplicationStatusHistoryItem);
+
+@Schema({
+  timestamps: true,
 })
 export class SubscriptionApplication {
   @Prop({
@@ -121,6 +144,12 @@ export class SubscriptionApplication {
     default: SubscriptionApplicationStatus.PENDING,
   })
   status: SubscriptionApplicationStatus;
+
+  @Prop({
+    type: [SubscriptionApplicationStatusHistoryItemSchema],
+    default: [],
+  })
+  statusHistory: SubscriptionApplicationStatusHistoryItem[];
 
   @Prop({
     type: [SubscriptionApplicationVehicleSchema],

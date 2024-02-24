@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateSubscriptionApplicationDto } from './create-subscription-application.dto';
-import { IsEnum } from 'class-validator';
+import { IsEnum, IsOptional } from 'class-validator';
 import { SubscriptionApplicationStatus } from '../interfaces/subscription-application-status.enum';
 
 export class UpdateSubscriptionApplicationDto extends PartialType(
@@ -10,6 +10,8 @@ export class UpdateSubscriptionApplicationDto extends PartialType(
 export class UpdateSubscriptionApplicationStatusDto {
   @IsEnum(SubscriptionApplicationStatus)
   status: SubscriptionApplicationStatus;
+  @IsOptional()
+  comment?: string;
 }
 
 export class FinalizeSubscriptionApplicationDto {
@@ -19,4 +21,7 @@ export class FinalizeSubscriptionApplicationDto {
     SubscriptionApplicationStatus.TO_AMMEND,
   ])
   status: SubscriptionApplicationStatus;
+
+  @IsOptional()
+  comment?: string;
 }

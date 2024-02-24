@@ -17,6 +17,7 @@ import {
 import { SortFilters } from 'src/lib/decorators/sort-filters.decorators';
 import { CreateSubscriptionApplicationDto } from 'src/lib/dto/create-subscription-application.dto';
 import {
+  FinalizeSubscriptionApplicationDto,
   UpdateSubscriptionApplicationDto,
   UpdateSubscriptionApplicationStatusDto,
 } from '../../lib/dto/update-subscription-application.dto';
@@ -320,12 +321,22 @@ export class SubscriptionApplicationService {
 
     subscriptionApplication.status = SubscriptionApplicationStatus.REVIEWING;
 
+    subscriptionApplication.statusHistory = [
+      ...subscriptionApplication.statusHistory,
+      {
+        status: SubscriptionApplicationStatus.REVIEWING,
+        comment: '',
+      },
+    ];
+
     return await subscriptionApplication.save();
   }
 
   async updateStatus(
     filters: FilterQuery<SubscriptionApplication>,
-    updateSubscriptionApplicationStatusDto: UpdateSubscriptionApplicationStatusDto,
+    updateSubscriptionApplicationStatusDto:
+      | UpdateSubscriptionApplicationStatusDto
+      | FinalizeSubscriptionApplicationDto,
   ): Promise<{ id: string; url?: string }> {
     const errors = [];
 
@@ -352,6 +363,13 @@ export class SubscriptionApplicationService {
           // save subscription application
           subscriptionApplication.status =
             updateSubscriptionApplicationStatusDto.status;
+          subscriptionApplication.statusHistory = [
+            ...subscriptionApplication.statusHistory,
+            {
+              status: SubscriptionApplicationStatus.PAYMENT_CONFIRMED,
+              comment: updateSubscriptionApplicationStatusDto.comment || '',
+            },
+          ];
           await subscriptionApplication.save();
           // update contract status
           const contractEntity = await this.contractService.findOne({
@@ -370,6 +388,13 @@ export class SubscriptionApplicationService {
           // save subscription application
           subscriptionApplication.status =
             updateSubscriptionApplicationStatusDto.status;
+          subscriptionApplication.statusHistory = [
+            ...subscriptionApplication.statusHistory,
+            {
+              status: SubscriptionApplicationStatus.PAYMENT_CANCELED,
+              comment: updateSubscriptionApplicationStatusDto.comment || '',
+            },
+          ];
           await subscriptionApplication.save();
           // update contract status
           const contractEntity = await this.contractService.findOne({
@@ -426,6 +451,13 @@ export class SubscriptionApplicationService {
           subscriptionApplication.status =
             updateSubscriptionApplicationStatusDto.status;
 
+          subscriptionApplication.statusHistory = [
+            ...subscriptionApplication.statusHistory,
+            {
+              status: SubscriptionApplicationStatus.PAYMENT_PENDING,
+              comment: updateSubscriptionApplicationStatusDto.comment || '',
+            },
+          ];
           await subscriptionApplication.save();
 
           // update contract status and checkout url
@@ -446,6 +478,13 @@ export class SubscriptionApplicationService {
       default:
         subscriptionApplication.status =
           updateSubscriptionApplicationStatusDto.status;
+        subscriptionApplication.statusHistory = [
+          ...subscriptionApplication.statusHistory,
+          {
+            status: updateSubscriptionApplicationStatusDto.status,
+            comment: updateSubscriptionApplicationStatusDto.comment || '',
+          },
+        ];
         await subscriptionApplication.save();
         return { id: subscriptionApplication._id };
     }
