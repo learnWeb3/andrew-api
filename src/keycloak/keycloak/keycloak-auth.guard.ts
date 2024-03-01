@@ -48,6 +48,16 @@ export const KeycloakRolesMongoQueryFilters = createParamDecorator(
   },
 );
 
+export const AuthenticatedUserRoles = createParamDecorator(
+  (data: unknown, ctx: ExecutionContext) => {
+    const request = ctx
+      .switchToHttp()
+      .getRequest<Request & { user: CustomerDocument; roles: string[] }>();
+
+    return request.roles;
+  },
+);
+
 export const AuthenticatedUser = createParamDecorator(
   (data: unknown, ctx: ExecutionContext) => {
     const request = ctx

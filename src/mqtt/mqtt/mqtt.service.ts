@@ -4,6 +4,7 @@ import * as mqtt from 'mqtt';
 import { hostname } from 'os';
 import { Subject, Subscription } from 'rxjs';
 import { DeviceStatus } from 'src/lib/interfaces/device-status.enum';
+import { NotificationType } from 'src/lib/interfaces/notification-type.enum';
 
 @Injectable()
 export class MqttService {
@@ -19,6 +20,30 @@ export class MqttService {
 
   private emit(message: { topic: string; payload: string | Buffer }) {
     this.subject.next(message);
+  }
+
+  public async emitSupervisorNotification(message: { type: NotificationType }) {
+    this.emit({
+      topic: `source/frontend/supervisor/notification`,
+      payload: JSON.stringify(message),
+    });
+  }
+
+  public async emitAdminNotification(message: { type: NotificationType }) {
+    this.emit({
+      topic: `source/frontend/admin/notification`,
+      payload: JSON.stringify(message),
+    });
+  }
+
+  public async emitCustomerNotification(
+    oauthId: string,
+    message: { type: NotificationType },
+  ) {
+    this.emit({
+      topic: `source/frontend/users/${oauthId}/notification`,
+      payload: JSON.stringify(message),
+    });
   }
 
   public emitActivationStatusEvent(

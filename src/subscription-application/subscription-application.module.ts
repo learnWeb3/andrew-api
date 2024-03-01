@@ -9,6 +9,7 @@ import { CustomerModule } from 'src/customer/customer.module';
 import { ContractModule } from 'src/contract/contract.module';
 import { VehicleModule } from 'src/vehicle/vehicle.module';
 import { EcommerceModule } from 'src/ecommerce/ecommerce.module';
+import { NotificationModule } from 'src/notification/notification.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { EcommerceModule } from 'src/ecommerce/ecommerce.module';
     forwardRef(() => ContractModule),
     forwardRef(() => VehicleModule),
     forwardRef(() => EcommerceModule),
+    forwardRef(() => NotificationModule),
   ],
   providers: [SubscriptionApplicationService],
   exports: [SubscriptionApplicationService],

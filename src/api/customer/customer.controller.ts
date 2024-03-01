@@ -11,6 +11,8 @@ import {
 import { CustomerService } from 'src/customer/customer/customer.service';
 import { Pagination, Paginated } from 'src/lib/decorators/pagination.decorator';
 import {
+  AuthenticatedUser,
+  AuthenticatedUserRoles,
   KeycloakAuthGuard,
   KeycloakAvailableRoles,
   KeycloakRoles,
@@ -30,6 +32,7 @@ import { ResourceType } from 'src/lib/interfaces/resource-type.enum';
 import { UpdateCustomerDto } from 'src/lib/dto/update-customer.dto';
 import { CreateThirdPartyAccountDto } from 'src/lib/dto/create-third-party-account.dto';
 import { SearchValue } from 'src/lib/decorators/search-value.decorators';
+import { CustomerDocument } from 'src/customer/customer/customer.schemas';
 
 @Controller('api/customer')
 export class CustomerController {
@@ -261,6 +264,51 @@ export class CustomerController {
     return this.customerService.findOneSubscriptionApplications(
       customerId,
       { ...queryFilters, customer: customerId },
+      pagination,
+      sortFilters,
+    );
+  }
+
+  @RestrictForRoleAndResource({
+    [KeycloakAvailableRoles.USER]: {
+      [ResourceType.CUSTOMER]: async (_model, request) => {
+        const check = request.params.id === request.user._id;
+        if (!check) {
+          throw new ConflictException(
+            `user account must be authenticated user`,
+          );
+        }
+        return check;
+      },
+    },
+  })
+  @UseGuards(RectrictForRoleAndResourceGuard)
+  @KeycloakRoles([
+    KeycloakAvailableRoles.INSURER,
+    KeycloakAvailableRoles.SUPERADMIN,
+    KeycloakAvailableRoles.USER,
+  ])
+  @UseGuards(KeycloakAuthGuard)
+  @Get(':id/notifications')
+  findOneNotifications(
+    @AuthenticatedUser() user: CustomerDocument,
+    @AuthenticatedUserRoles() roles: string[],
+    @Param('id') customerId: string,
+    @Paginated() pagination: Pagination,
+    @SortFiltered() sortFilters: SortFilters,
+  ) {
+    const filters = roles.includes(KeycloakAvailableRoles.INSURER)
+      ? { accessibleBy: KeycloakAvailableRoles.INSURER }
+      : roles.includes(KeycloakAvailableRoles.SUPERADMIN)
+      ? { accessibleBy: KeycloakAvailableRoles.INSURER }
+      : {
+          accessibleBy: KeycloakAvailableRoles.USER,
+          receivers: user.authorizationServerUserId,
+        };
+
+    return this.customerService.findOneNotifications(
+      customerId,
+      filters,
       pagination,
       sortFilters,
     );

@@ -31,6 +31,8 @@ import { EcommerceService } from 'src/ecommerce/ecommerce/ecommerce.service';
 import { ContractStatus } from 'src/lib/interfaces/contract-status.enum';
 import { EcommerceGateway } from 'src/lib/interfaces/ecommerce-gateway.enum';
 import { generateSequentialReference } from 'src/lib/helpers/generate-sequential-reference.helper';
+import { NotificationService } from 'src/notification/notification/notification.service';
+import { NotificationType } from 'src/lib/interfaces/notification-type.enum';
 
 @Injectable()
 export class SubscriptionApplicationService {
@@ -45,6 +47,8 @@ export class SubscriptionApplicationService {
     private readonly vehicleService: VehicleService,
     @Inject(forwardRef(() => EcommerceService))
     private readonly ecommerceService: EcommerceService,
+    @Inject(forwardRef(() => NotificationService))
+    private readonly notificationService: NotificationService,
   ) {}
 
   exists(filters: FilterQuery<SubscriptionApplicationDocument>) {
@@ -170,7 +174,14 @@ export class SubscriptionApplicationService {
       };
     }
 
-    return await newSubscriptionApplication.save();
+    const data = await newSubscriptionApplication.save();
+
+    await this.notificationService.createSupervisorNotification({
+      type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_PENDING,
+      data,
+    });
+
+    return data;
   }
 
   async update(
@@ -329,7 +340,14 @@ export class SubscriptionApplicationService {
       },
     ];
 
-    return await subscriptionApplication.save();
+    const data = await subscriptionApplication.save();
+
+    await this.notificationService.createSupervisorNotification({
+      type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_REVIEWING,
+      data,
+    });
+
+    return data;
   }
 
   async updateStatus(
@@ -370,7 +388,7 @@ export class SubscriptionApplicationService {
               comment: updateSubscriptionApplicationStatusDto.comment || '',
             },
           ];
-          await subscriptionApplication.save();
+          const data = await subscriptionApplication.save();
           // update contract status
           const contractEntity = await this.contractService.findOne({
             _id: subscriptionApplication.contract.contract,
@@ -378,6 +396,18 @@ export class SubscriptionApplicationService {
 
           contractEntity.status = ContractStatus.ACTIVE;
           await contractEntity.save();
+
+          await this.notificationService.createSupervisorNotification({
+            type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_PAYMENT_CONFIRMED,
+            data,
+          });
+
+          await this.notificationService.createCustomerNotification({
+            type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_PAYMENT_CONFIRMED,
+            receivers: [subscriptionApplication.customer],
+            data,
+          });
+
           return { id: subscriptionApplication._id };
         } catch (error) {
           console.log(error);
@@ -395,7 +425,7 @@ export class SubscriptionApplicationService {
               comment: updateSubscriptionApplicationStatusDto.comment || '',
             },
           ];
-          await subscriptionApplication.save();
+          const data = await subscriptionApplication.save();
           // update contract status
           const contractEntity = await this.contractService.findOne({
             _id: subscriptionApplication.contract.contract,
@@ -403,6 +433,18 @@ export class SubscriptionApplicationService {
 
           contractEntity.status = ContractStatus.CANCELED;
           await contractEntity.save();
+
+          await this.notificationService.createSupervisorNotification({
+            type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_PAYMENT_CANCELED,
+            data,
+          });
+
+          await this.notificationService.createCustomerNotification({
+            type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_PAYMENT_CANCELED,
+            receivers: [subscriptionApplication.customer],
+            data,
+          });
+
           return { id: subscriptionApplication._id };
         } catch (error) {
           console.log(error);
@@ -413,6 +455,15 @@ export class SubscriptionApplicationService {
           const customer = await this.customerService.findOne({
             _id: subscriptionApplication.customer,
           });
+          const { errors: productErrors } =
+            await this.contractService.validateProductExists(
+              subscriptionApplication.contract.ecommerceProduct,
+              subscriptionApplication.contract.ecommerceGateway,
+            );
+          errors.push(...productErrors);
+          if (errors.length) {
+            throw new BadRequestException(errors.join(', '));
+          }
           // contract creation
           const contract = await this.contractService.create({
             customer: subscriptionApplication.customer,
@@ -432,6 +483,9 @@ export class SubscriptionApplicationService {
               registrationNumber: vehicle.registrationNumber,
               originalInServiceDate: vehicle.originalInServiceDate,
               contractSubscriptionKm: vehicle.contractSubscriptionKm,
+              driverLicenceDocURL: vehicle.driverLicenceDocURL,
+              vehicleRegistrationCardDocURL:
+                vehicle.vehicleRegistrationCardDocURL,
             });
           }
 
@@ -458,7 +512,8 @@ export class SubscriptionApplicationService {
               comment: updateSubscriptionApplicationStatusDto.comment || '',
             },
           ];
-          await subscriptionApplication.save();
+
+          const data = await subscriptionApplication.save();
 
           // update contract status and checkout url
           const contractEntity = await this.contractService.findOne({
@@ -469,6 +524,12 @@ export class SubscriptionApplicationService {
           contractEntity.ecommerceCheckoutURL = url;
 
           await contractEntity.save();
+
+          await this.notificationService.createCustomerNotification({
+            type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_PAYMENT_PENDING,
+            receivers: [subscriptionApplication.customer],
+            data,
+          });
 
           return { id: subscriptionApplication._id, url };
         } catch (error) {
@@ -485,7 +546,26 @@ export class SubscriptionApplicationService {
             comment: updateSubscriptionApplicationStatusDto.comment || '',
           },
         ];
-        await subscriptionApplication.save();
+        const data = await subscriptionApplication.save();
+
+        switch (updateSubscriptionApplicationStatusDto.status) {
+          case SubscriptionApplicationStatus.REJECTED:
+            await this.notificationService.createCustomerNotification({
+              type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_REJECTED,
+              receivers: [subscriptionApplication.customer],
+              data,
+            });
+          case SubscriptionApplicationStatus.TO_AMMEND:
+            await this.notificationService.createCustomerNotification({
+              type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_TO_AMMEND,
+              receivers: [subscriptionApplication.customer],
+              data,
+            });
+          default:
+            console.log(
+              `notification not handled for status ${updateSubscriptionApplicationStatusDto.status}`,
+            );
+        }
         return { id: subscriptionApplication._id };
     }
   }

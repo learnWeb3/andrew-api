@@ -234,7 +234,7 @@ export class ContractController {
   ) {
     return this.contractService.findOneVehicles(
       contractId,
-      queryFilters,
+      { ...queryFilters, contract: contractId },
       pagination,
       sortFilters,
     );

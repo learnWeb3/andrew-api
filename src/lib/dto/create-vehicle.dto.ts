@@ -41,4 +41,10 @@ export class CreateVehicleDto {
   @IsNotEmpty()
   @IsNumber()
   contractSubscriptionKm: number;
+
+  @IsNotEmpty()
+  driverLicenceDocURL: string;
+
+  @IsNotEmpty()
+  vehicleRegistrationCardDocURL: string;
 }

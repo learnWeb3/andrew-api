@@ -5,15 +5,16 @@ import {
 } from '../decorators/pagination.decorator';
 import { SortFilters } from '../decorators/sort-filters.decorators';
 
-export async function paginateMongooseQuery<T>(
+export async function paginateMongooseQuery<T, P>(
   model: Model<T>,
   filters: FilterQuery<T>,
   pagination: Pagination,
   sortFilters: SortFilters,
-): Promise<PaginatedResults<HydratedDocument<T>>> {
-  const results = await model
+  populatePaths: string | string[] = [],
+): Promise<PaginatedResults<HydratedDocument<T> & P>> {
+  const results: any[] = await model
     .find(filters)
-
+    .populate(populatePaths)
     .skip(pagination.start)
     .limit(pagination.limit)
     .sort({

@@ -61,7 +61,7 @@ export class VehicleService implements MongooseJoinable {
     pagination: Pagination,
     sortFilters: SortFilters,
   ): Promise<PaginatedResults<VehicleDocument>> {
-    return paginateMongooseQuery<Vehicle>(
+    return paginateMongooseQuery<Vehicle, Record<string, never>>(
       this.vehicleModel,
       filters,
       pagination,

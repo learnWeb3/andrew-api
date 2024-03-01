@@ -32,6 +32,8 @@ import { EcommerceService } from 'src/ecommerce/ecommerce/ecommerce.service';
 import { EcommerceGateway } from 'src/lib/interfaces/ecommerce-gateway.enum';
 import { SubscriptionApplicationDocument } from 'src/subscription-application/subscription-application/subscription-application.schemas';
 import { SubscriptionApplicationService } from 'src/subscription-application/subscription-application/subscription-application.service';
+import { NotificationService } from 'src/notification/notification/notification.service';
+import { NotificationDocument } from 'src/notification/notification/notification.schemas';
 
 @Injectable()
 export class CustomerService implements MongooseJoinable {
@@ -52,6 +54,8 @@ export class CustomerService implements MongooseJoinable {
     private readonly objectStorageService: ObjectStorageService,
     @Inject(forwardRef(() => EcommerceService))
     private readonly ecommerceService: EcommerceService,
+    @Inject(forwardRef(() => NotificationService))
+    private readonly notificationService: NotificationService,
   ) {}
 
   exists(filters: FilterQuery<Customer>) {
@@ -184,6 +188,19 @@ export class CustomerService implements MongooseJoinable {
       throw new BadRequestException(`customer ${customerId} must exists`);
     }
     return this.deviceService.findAll(filters, pagination, sortFilters);
+  }
+
+  async findOneNotifications(
+    customerId: string,
+    filters: FilterQuery<Notification>,
+    pagination: Pagination,
+    sortFilters: SortFilters,
+  ): Promise<PaginatedResults<NotificationDocument>> {
+    const customerExists = await this.exists({ _id: customerId });
+    if (!customerExists) {
+      throw new BadRequestException(`customer ${customerId} must exists`);
+    }
+    return this.notificationService.findAll(filters, pagination, sortFilters);
   }
 
   async create(createCustomerDto: CreateCustomerDto): Promise<{ _id: string }> {

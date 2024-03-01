@@ -247,7 +247,7 @@ export class ContractService implements MongooseJoinable {
           $lookup: {
             from: this.vehicleService.getCollectionName(),
             localField: '_id',
-            foreignField: 'vehicle',
+            foreignField: 'contract',
             as: 'vehicles',
             pipeline: [
               {

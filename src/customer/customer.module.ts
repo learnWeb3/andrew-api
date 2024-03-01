@@ -9,6 +9,7 @@ import { KeycloakModule } from 'src/keycloak/keycloak.module';
 import { ObjectStorageModule } from 'src/object-storage/object-storage.module';
 import { EcommerceModule } from 'src/ecommerce/ecommerce.module';
 import { SubscriptionApplicationModule } from 'src/subscription-application/subscription-application.module';
+import { NotificationModule } from 'src/notification/notification.module';
 
 @Global()
 @Module({
@@ -28,6 +29,7 @@ import { SubscriptionApplicationModule } from 'src/subscription-application/subs
     forwardRef(() => ObjectStorageModule),
     forwardRef(() => EcommerceModule),
     forwardRef(() => SubscriptionApplicationModule),
+    forwardRef(() => NotificationModule),
   ],
 })
 export class CustomerModule {}
