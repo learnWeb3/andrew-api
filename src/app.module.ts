@@ -13,7 +13,9 @@ import { MqttModule } from './mqtt/mqtt.module';
     MongooseModule.forRoot(process.env.MONGO_URI),
     ApiModule,
     KafkaConsumerModule,
-    MqttModule,
+    MqttModule.register({
+      clientId: 'public-andrew-api',
+    }),
   ],
   controllers: [],
   providers: [],

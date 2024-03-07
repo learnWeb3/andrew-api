@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { AndrewDeviceActivationStatusResponseEvent } from 'andrew-events-schema/andrew-device-events';
 import * as mqtt from 'mqtt';
 import { hostname } from 'os';
@@ -6,11 +6,17 @@ import { Subject, Subscription } from 'rxjs';
 import { DeviceStatus } from 'src/lib/interfaces/device-status.enum';
 import { NotificationType } from 'src/lib/interfaces/notification-type.enum';
 
+export interface MqttServiceOptions {
+  clientId: string;
+}
+
 @Injectable()
 export class MqttService {
   private readonly subject: Subject<any>;
+  private clientId: string;
   private subscription: Subscription = null;
-  constructor() {
+  constructor(@Inject('CONFIG_OPTIONS') private options: MqttServiceOptions) {
+    this.clientId = options.clientId || hostname();
     this.subject = new Subject();
   }
 
@@ -71,9 +77,11 @@ export class MqttService {
           username: process.env.MQTT_AUTH_USERNAME,
           password: process.env.MQTT_AUTH_PASSWORD,
           rejectUnauthorized: true,
-          clientId: hostname(),
+          clientId: this.clientId,
         },
       );
+
+      console.log(`attempting connection to host`);
 
       client.on('connect', () => {
         console.log('mqtt broker connection opened.');

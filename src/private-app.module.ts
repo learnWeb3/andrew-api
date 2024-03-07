@@ -11,7 +11,9 @@ import { MqttModule } from './mqtt/mqtt.module';
       : []),
     MongooseModule.forRoot(process.env.MONGO_URI),
     PrivateApiModule,
-    MqttModule,
+    MqttModule.register({
+      clientId: 'private-andrew-api',
+    }),
   ],
   controllers: [],
   providers: [],
