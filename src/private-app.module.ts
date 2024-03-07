@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PrivateApiModule } from './private-api/private-api.module';
+import { MqttModule } from './mqtt/mqtt.module';
 
 @Module({
   imports: [
@@ -10,6 +11,7 @@ import { PrivateApiModule } from './private-api/private-api.module';
       : []),
     MongooseModule.forRoot(process.env.MONGO_URI),
     PrivateApiModule,
+    MqttModule,
   ],
   controllers: [],
   providers: [],

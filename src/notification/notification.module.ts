@@ -6,7 +6,6 @@ import {
   Notification,
   NotificationSchema,
 } from './notification/notification.schemas';
-import { MqttModule } from 'src/mqtt/mqtt.module';
 import { CustomerModule } from 'src/customer/customer.module';
 
 @Module({
@@ -15,7 +14,6 @@ import { CustomerModule } from 'src/customer/customer.module';
     MongooseModule.forFeature([
       { name: Notification.name, schema: NotificationSchema },
     ]),
-    forwardRef(() => MqttModule),
     forwardRef(() => CustomerModule),
   ],
   exports: [NotificationService],

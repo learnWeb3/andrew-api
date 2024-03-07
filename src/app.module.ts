@@ -3,6 +3,7 @@ import { ApiModule } from './api/api.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { KafkaConsumerModule } from './kafka-consumer/kafka-consumer.module';
+import { MqttModule } from './mqtt/mqtt.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { KafkaConsumerModule } from './kafka-consumer/kafka-consumer.module';
     MongooseModule.forRoot(process.env.MONGO_URI),
     ApiModule,
     KafkaConsumerModule,
+    MqttModule,
   ],
   controllers: [],
   providers: [],
