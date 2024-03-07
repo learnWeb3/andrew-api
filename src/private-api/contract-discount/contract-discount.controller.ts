@@ -1,6 +1,8 @@
 import { Controller, Inject, Post, forwardRef } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { ContractService } from 'src/contract/contract/contract.service';
 
+@ApiTags('contract-discount')
 @Controller('contract-discount')
 export class ContractDiscountController {
   constructor(

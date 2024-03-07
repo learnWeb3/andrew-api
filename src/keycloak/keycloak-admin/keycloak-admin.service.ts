@@ -48,32 +48,41 @@ export class KeycloakAdminService {
       inusurerRoleName: 'default-supervisor-roles',
     },
   ): Promise<{ id: string; password: string }> {
-    await this.authenticate();
-    const user = await this.kcAdminClient.users.create({
-      username: userData.email,
-      firstName: userData.firstName,
-      lastName: userData.lastName,
-      email: userData.email,
-      emailVerified: true,
-      enabled: true,
-    });
+    try {
+      await this.authenticate();
+      const user = await this.kcAdminClient.users.create({
+        username: userData.email,
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        email: userData.email,
+        emailVerified: true,
+        enabled: true,
+      });
 
-    if (insurer) {
-      await this.makeInsurer(
-        user.id,
-        keycloakOptions.realm,
-        keycloakOptions.defaultUserRoleName,
-        keycloakOptions.inusurerRoleName,
+      if (insurer) {
+        await this.makeInsurer(
+          user.id,
+          keycloakOptions.realm,
+          keycloakOptions.defaultUserRoleName,
+          keycloakOptions.inusurerRoleName,
+        );
+      }
+
+      const password = this.generatePassword();
+
+      // console.log(`==> password ${password}`);
+
+      await this.setUserPassword(user.id, password);
+
+      await this.setUpdatePasswordAction(user.id).catch((error) =>
+        console.log(error),
       );
+
+      return { id: user.id, password };
+    } catch (error) {
+      console.log(error);
+      throw error;
     }
-
-    const password = this.generatePassword();
-
-    await this.setUserPassword(user.id, password);
-
-    await this.setUpdatePasswordAction(user.id);
-
-    return { id: user.id, password };
   }
 
   private generatePassword() {

@@ -7,6 +7,7 @@ import {
   UseGuards,
   forwardRef,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import {
   KeycloakAuthGuard,
   KeycloakAvailableRoles,
@@ -27,6 +28,7 @@ import { VehicleDocument } from 'src/vehicle/vehicle/vehicle.schema';
 import { VehicleService } from 'src/vehicle/vehicle/vehicle.service';
 
 @UseGuards(KeycloakAuthGuard)
+@ApiTags('vehicle')
 @Controller('api/vehicle')
 export class VehicleController {
   constructor(

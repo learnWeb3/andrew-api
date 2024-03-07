@@ -8,4 +8,8 @@ export class UpdateDeviceDto {
   @IsOptional()
   @IsNotEmpty()
   vehicle: string;
+
+  @IsOptional()
+  @IsNotEmpty()
+  contract: string;
 }

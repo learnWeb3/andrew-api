@@ -41,8 +41,11 @@ import {
   StatusFiltered,
   StatusFilters,
 } from 'src/lib/decorators/status-filters.decorators';
+import { SearchValue } from 'src/lib/decorators/search-value.decorators';
+import { ApiTags } from '@nestjs/swagger';
 
 @UseGuards(KeycloakAuthGuard)
+@ApiTags('subscription-application')
 @Controller('api/subscription-application')
 export class SubscriptionApplicationController {
   constructor(
@@ -302,6 +305,7 @@ export class SubscriptionApplicationController {
     @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @StatusFiltered(SubscriptionApplicationStatus.PENDING)
     status: StatusFilters<SubscriptionApplicationStatus>,
+    @SearchValue() searchValue: string,
     @Paginated() pagination: Pagination,
     @SortFiltered() sortFilters: SortFilters,
   ) {
@@ -309,6 +313,11 @@ export class SubscriptionApplicationController {
       ...queryFilters,
       ...status,
     };
+    if (searchValue) {
+      Object.assign(filters, {
+        ref: { $regex: `.*${searchValue}.*`, $options: 'i' },
+      });
+    }
     return this.subscriptionApplicationService.findAll(
       filters,
       pagination,

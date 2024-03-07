@@ -411,8 +411,8 @@ export class SubscriptionApplicationService {
           return { id: subscriptionApplication._id };
         } catch (error) {
           console.log(error);
+          break;
         }
-        break;
       case SubscriptionApplicationStatus.PAYMENT_CANCELED:
         try {
           // save subscription application
@@ -448,8 +448,8 @@ export class SubscriptionApplicationService {
           return { id: subscriptionApplication._id };
         } catch (error) {
           console.log(error);
+          break;
         }
-        break;
       case SubscriptionApplicationStatus.PAYMENT_PENDING:
         try {
           const customer = await this.customerService.findOne({
@@ -534,39 +534,55 @@ export class SubscriptionApplicationService {
           return { id: subscriptionApplication._id, url };
         } catch (error) {
           console.log(error);
+          break;
         }
-        break;
-      default:
-        subscriptionApplication.status =
-          updateSubscriptionApplicationStatusDto.status;
-        subscriptionApplication.statusHistory = [
-          ...subscriptionApplication.statusHistory,
-          {
-            status: updateSubscriptionApplicationStatusDto.status,
-            comment: updateSubscriptionApplicationStatusDto.comment || '',
-          },
-        ];
-        const data = await subscriptionApplication.save();
 
-        switch (updateSubscriptionApplicationStatusDto.status) {
-          case SubscriptionApplicationStatus.REJECTED:
-            await this.notificationService.createCustomerNotification({
-              type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_REJECTED,
-              receivers: [subscriptionApplication.customer],
-              data,
-            });
-          case SubscriptionApplicationStatus.TO_AMMEND:
-            await this.notificationService.createCustomerNotification({
-              type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_TO_AMMEND,
-              receivers: [subscriptionApplication.customer],
-              data,
-            });
-          default:
-            console.log(
-              `notification not handled for status ${updateSubscriptionApplicationStatusDto.status}`,
-            );
+      case SubscriptionApplicationStatus.REJECTED:
+        try {
+          subscriptionApplication.status =
+            updateSubscriptionApplicationStatusDto.status;
+          subscriptionApplication.statusHistory = [
+            ...subscriptionApplication.statusHistory,
+            {
+              status: updateSubscriptionApplicationStatusDto.status,
+              comment: updateSubscriptionApplicationStatusDto.comment || '',
+            },
+          ];
+          const rejectedSubscriptionApplication =
+            await subscriptionApplication.save();
+          await this.notificationService.createCustomerNotification({
+            type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_REJECTED,
+            receivers: [subscriptionApplication.customer],
+            data: rejectedSubscriptionApplication,
+          });
+          return { id: subscriptionApplication._id };
+        } catch (error) {
+          console.log(error);
+          break;
         }
-        return { id: subscriptionApplication._id };
+
+      case SubscriptionApplicationStatus.TO_AMMEND:
+        try {
+          subscriptionApplication.status =
+            updateSubscriptionApplicationStatusDto.status;
+          subscriptionApplication.statusHistory = [
+            ...subscriptionApplication.statusHistory,
+            {
+              status: updateSubscriptionApplicationStatusDto.status,
+              comment: updateSubscriptionApplicationStatusDto.comment || '',
+            },
+          ];
+          const toAmmendSubscriptionApplication =
+            await subscriptionApplication.save();
+          await this.notificationService.createCustomerNotification({
+            type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_TO_AMMEND,
+            receivers: [subscriptionApplication.customer],
+            data: toAmmendSubscriptionApplication,
+          });
+        } catch (error) {
+          console.log(error);
+          break;
+        }
     }
   }
 

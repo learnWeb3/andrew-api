@@ -1,8 +1,20 @@
-import { Module } from '@nestjs/common';
-import { MqttService } from './mqtt/mqtt.service';
+import { DynamicModule, Global, Module } from '@nestjs/common';
+import { MqttService, MqttServiceOptions } from './mqtt/mqtt.service';
 
-@Module({
-  providers: [MqttService],
-  exports: [MqttService],
-})
-export class MqttModule {}
+@Global()
+@Module({})
+export class MqttModule {
+  static register(options: MqttServiceOptions): DynamicModule {
+    return {
+      module: MqttModule,
+      providers: [
+        {
+          provide: 'CONFIG_OPTIONS',
+          useValue: options,
+        },
+        MqttService,
+      ],
+      exports: [MqttService],
+    };
+  }
+}

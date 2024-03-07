@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
+import { Contract } from 'src/contract/contract/contract.schemas';
 import { Customer } from 'src/customer/customer/customer.schemas';
 import { DeviceStatus } from 'src/lib/interfaces/device-status.enum';
 import { Vehicle } from 'src/vehicle/vehicle/vehicle.schema';
@@ -47,6 +48,12 @@ export class Device {
     ref: Vehicle.name,
   })
   vehicle: string;
+
+  @Prop({
+    type: mongoose.Schema.Types.String,
+    ref: Contract.name,
+  })
+  contract: string;
 
   @Prop({
     type: mongoose.Schema.Types.Date,

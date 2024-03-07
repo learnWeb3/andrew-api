@@ -1,16 +1,22 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { AndrewDeviceActivationStatusResponseEvent } from 'andrew-events-schema/andrew-device-events';
 import * as mqtt from 'mqtt';
 import { hostname } from 'os';
 import { Subject, Subscription } from 'rxjs';
 import { DeviceStatus } from 'src/lib/interfaces/device-status.enum';
-import { NotificationType } from 'src/lib/interfaces/notification-type.enum';
+import { NotificationDocument } from 'src/notification/notification/notification.schemas';
+
+export interface MqttServiceOptions {
+  clientId: string;
+}
 
 @Injectable()
 export class MqttService {
   private readonly subject: Subject<any>;
+  private clientId: string;
   private subscription: Subscription = null;
-  constructor() {
+  constructor(@Inject('CONFIG_OPTIONS') private options: MqttServiceOptions) {
+    this.clientId = options.clientId || hostname();
     this.subject = new Subject();
   }
 
@@ -19,17 +25,18 @@ export class MqttService {
   }
 
   private emit(message: { topic: string; payload: string | Buffer }) {
+    console.log(`===> sending message through mqtt topic ${message.topic}`);
     this.subject.next(message);
   }
 
-  public async emitSupervisorNotification(message: { type: NotificationType }) {
+  public async emitSupervisorNotification(message: NotificationDocument) {
     this.emit({
       topic: `source/frontend/supervisor/notification`,
       payload: JSON.stringify(message),
     });
   }
 
-  public async emitAdminNotification(message: { type: NotificationType }) {
+  public async emitAdminNotification(message: NotificationDocument) {
     this.emit({
       topic: `source/frontend/admin/notification`,
       payload: JSON.stringify(message),
@@ -38,7 +45,7 @@ export class MqttService {
 
   public async emitCustomerNotification(
     oauthId: string,
-    message: { type: NotificationType },
+    message: NotificationDocument,
   ) {
     this.emit({
       topic: `source/frontend/users/${oauthId}/notification`,
@@ -71,9 +78,11 @@ export class MqttService {
           username: process.env.MQTT_AUTH_USERNAME,
           password: process.env.MQTT_AUTH_PASSWORD,
           rejectUnauthorized: true,
-          clientId: hostname(),
+          clientId: this.clientId,
         },
       );
+
+      console.log(`attempting connection to host`);
 
       client.on('connect', () => {
         console.log('mqtt broker connection opened.');

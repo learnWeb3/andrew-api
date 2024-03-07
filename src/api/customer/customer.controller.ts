@@ -33,7 +33,9 @@ import { UpdateCustomerDto } from 'src/lib/dto/update-customer.dto';
 import { CreateThirdPartyAccountDto } from 'src/lib/dto/create-third-party-account.dto';
 import { SearchValue } from 'src/lib/decorators/search-value.decorators';
 import { CustomerDocument } from 'src/customer/customer/customer.schemas';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('customer')
 @Controller('api/customer')
 export class CustomerController {
   constructor(private readonly customerService: CustomerService) {}
@@ -47,25 +49,24 @@ export class CustomerController {
     @SortFiltered() sortFilters: SortFilters,
   ) {
     const filters = {
-      $or: [
-        { insurer: true },
-        {
-          fullName: { $regex: new RegExp(searchValue), $options: 'i' },
-        },
-        {
-          firstName: { $regex: new RegExp(searchValue), $options: 'i' },
-        },
-        {
-          lastName: { $regex: new RegExp(searchValue), $options: 'i' },
-        },
-        {
-          'contactInformations.email': {
-            $regex: new RegExp(searchValue),
-            $options: 'i',
-          },
-        },
-      ],
+      insurer: true,
     };
+
+    if (searchValue) {
+      Object.assign(filters, {
+        $or: [
+          {
+            fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
+          },
+          {
+            'contactInformations.email': {
+              $regex: `^.*${searchValue}.*$`,
+              $options: 'i',
+            },
+          },
+        ],
+      });
+    }
 
     return this.customerService.findAll(filters, pagination, sortFilters);
   }
@@ -81,25 +82,26 @@ export class CustomerController {
     @SortFiltered() sortFilters: SortFilters,
   ) {
     const filters = {
-      $or: [
-        { insurer: false },
-        {
-          fullName: { $regex: new RegExp(searchValue), $options: 'i' },
-        },
-        {
-          firstName: { $regex: new RegExp(searchValue), $options: 'i' },
-        },
-        {
-          lastName: { $regex: new RegExp(searchValue), $options: 'i' },
-        },
-        {
-          'contactInformations.email': {
-            $regex: new RegExp(searchValue),
-            $options: 'i',
-          },
-        },
-      ],
+      insurer: false,
     };
+
+    if (searchValue) {
+      Object.assign(filters, {
+        $or: [
+          {
+            fullName: { $regex: `.*${searchValue}.*`, $options: 'i' },
+          },
+          {
+            'contactInformations.email': {
+              $regex: `.*${searchValue}.*`,
+              $options: 'i',
+            },
+          },
+        ],
+      });
+    }
+
+    console.log('===> filters', filters);
 
     return this.customerService.findAll(filters, pagination, sortFilters);
   }
@@ -152,13 +154,24 @@ export class CustomerController {
   @Get(':id/contract')
   findOneContracts(
     @Param('id') customerId: string,
+    @SearchValue() searchValue: string,
     @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @Paginated() pagination: Pagination,
     @SortFiltered() sortFilters: SortFilters,
   ) {
+    const filters = { ...queryFilters, customer: customerId };
+    if (searchValue) {
+      Object.assign(filters, {
+        $or: [
+          {
+            ref: { $regex: `.*${searchValue}.*`, $options: 'i' },
+          },
+        ],
+      });
+    }
     return this.customerService.findOneContracts(
       customerId,
-      { ...queryFilters, customer: customerId },
+      filters,
       pagination,
       sortFilters,
     );
@@ -187,6 +200,7 @@ export class CustomerController {
   @Get(':id/vehicle')
   findOneVehicles(
     @Param('id') customerId: string,
+    @SearchValue() searchValue: string,
     @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @Paginated() pagination: Pagination,
     @SortFiltered() sortFilters: SortFilters,
@@ -222,13 +236,19 @@ export class CustomerController {
   @Get(':id/device')
   findOneDevices(
     @Param('id') customerId: string,
+    @SearchValue() searchValue: string,
     @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @Paginated() pagination: Pagination,
     @SortFiltered() sortFilters: SortFilters,
   ) {
+    const filters = {
+      ...queryFilters,
+      customer: customerId,
+      serialNumber: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
+    };
     return this.customerService.findOneDevices(
       customerId,
-      { ...queryFilters, customer: customerId },
+      filters,
       pagination,
       sortFilters,
     );
@@ -259,11 +279,18 @@ export class CustomerController {
     @Param('id') customerId: string,
     @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @Paginated() pagination: Pagination,
+    @SearchValue() searchValue: string,
     @SortFiltered() sortFilters: SortFilters,
   ) {
+    const filters = { ...queryFilters, customer: customerId };
+    if (searchValue) {
+      Object.assign(filters, {
+        ref: { $regex: `.*${searchValue}.*`, $options: 'i' },
+      });
+    }
     return this.customerService.findOneSubscriptionApplications(
       customerId,
-      { ...queryFilters, customer: customerId },
+      filters,
       pagination,
       sortFilters,
     );
@@ -303,7 +330,7 @@ export class CustomerController {
       ? { accessibleBy: KeycloakAvailableRoles.INSURER }
       : {
           accessibleBy: KeycloakAvailableRoles.USER,
-          receivers: user.authorizationServerUserId,
+          receivers: user._id,
         };
 
     return this.customerService.findOneNotifications(

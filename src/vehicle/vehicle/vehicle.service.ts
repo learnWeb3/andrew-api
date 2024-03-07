@@ -10,7 +10,7 @@ import { Vehicle } from './vehicle.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Pagination } from 'src/lib/decorators/pagination.decorator';
 import { SortFilters } from 'src/lib/decorators/sort-filters.decorators';
-import { paginateMongooseQuery } from 'src/lib/helpers/paginate-mongoose-query.helper';
+// import { paginateMongooseQuery } from 'src/lib/helpers/paginate-mongoose-query.helper';
 import { PaginatedResults } from '../../lib/decorators/pagination.decorator';
 import { VehicleDocument } from 'src/vehicle/vehicle/vehicle.schema';
 import { CreateVehicleDto } from 'src/lib/dto/create-vehicle.dto';
@@ -22,6 +22,7 @@ import { OpensearchService } from 'src/opensearch/opensearch/opensearch.service'
 import { Device, DeviceDocument } from 'src/device/device/device.schemas';
 import { MongooseJoinable } from 'src/lib/interfaces/mongoose-joinable.interface';
 import { ObjectStorageService } from 'src/object-storage/object-storage/object-storage.service';
+import { CustomerDocument } from 'src/customer/customer/customer.schemas';
 
 @Injectable()
 export class VehicleService implements MongooseJoinable {
@@ -56,17 +57,67 @@ export class VehicleService implements MongooseJoinable {
     return this.vehicleModel.findOne(filters);
   }
 
-  findAll(
+  async findAll(
     filters: FilterQuery<Vehicle>,
     pagination: Pagination,
     sortFilters: SortFilters,
-  ): Promise<PaginatedResults<VehicleDocument>> {
-    return paginateMongooseQuery<Vehicle, Record<string, never>>(
-      this.vehicleModel,
-      filters,
-      pagination,
-      sortFilters,
-    );
+  ): Promise<
+    PaginatedResults<
+      VehicleDocument & {
+        devices: DeviceDocument[];
+        customer: CustomerDocument;
+      }
+    >
+  > {
+    // return paginateMongooseQuery<Vehicle, Record<string, never>>(
+    //   this.vehicleModel,
+    //   filters,
+    //   pagination,
+    //   sortFilters,
+    // );
+
+    const results = await this.vehicleModel
+      .aggregate([
+        {
+          $match: filters,
+        },
+        {
+          $lookup: {
+            from: this.deviceService.getCollectionName(),
+            localField: '_id',
+            foreignField: 'vehicle',
+            as: 'devices',
+          },
+        },
+        {
+          $sort: {
+            [sortFilters.sort]: sortFilters.order,
+          },
+        } as any,
+        {
+          $skip: pagination.start,
+        },
+        {
+          $limit: pagination.limit,
+        },
+      ])
+      .exec();
+
+    const count = await this.vehicleModel.aggregate([
+      {
+        $match: filters,
+      },
+      {
+        $count: 'count',
+      },
+    ]);
+
+    return {
+      results,
+      count: count?.[0]?.count || 0,
+      start: pagination.start,
+      limit: pagination.limit,
+    };
   }
 
   async findOneDevices(

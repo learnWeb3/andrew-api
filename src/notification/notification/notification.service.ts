@@ -65,9 +65,7 @@ export class NotificationService {
       accessibleBy: KeycloakAvailableRoles.SUPERADMIN,
     });
     newNotification = await newNotification.save();
-    this.mqttService.emitAdminNotification({
-      type: createNotificationDto.type,
-    });
+    this.mqttService.emitAdminNotification(newNotification);
     return { _id: newNotification._id };
   }
 
@@ -87,9 +85,7 @@ export class NotificationService {
       accessibleBy: KeycloakAvailableRoles.INSURER,
     });
     newNotification = await newNotification.save();
-    this.mqttService.emitSupervisorNotification({
-      type: createNotificationDto.type,
-    });
+    this.mqttService.emitSupervisorNotification(newNotification);
     return { _id: newNotification._id };
   }
 
@@ -110,7 +106,7 @@ export class NotificationService {
       accessibleBy: KeycloakAvailableRoles.USER,
     });
     newNotification = await newNotification.save();
-    const customerIds = [];
+    const customerIds = createNotificationDto.receivers;
     const oauthReveivers: string[] = await this.customerService
       .findAll(
         {
@@ -128,9 +124,7 @@ export class NotificationService {
         ),
       );
     for (const oauthReceiver of oauthReveivers) {
-      this.mqttService.emitCustomerNotification(oauthReceiver, {
-        type: createNotificationDto.type,
-      });
+      this.mqttService.emitCustomerNotification(oauthReceiver, newNotification);
     }
     return { _id: newNotification._id };
   }

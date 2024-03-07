@@ -30,8 +30,10 @@ import {
   StatusFiltered,
   StatusFilters,
 } from 'src/lib/decorators/status-filters.decorators';
+import { ApiTags } from '@nestjs/swagger';
 
 @UseGuards(KeycloakAuthGuard)
+@ApiTags('contract')
 @Controller('api/contract')
 export class ContractController {
   constructor(private contractService: ContractService) {}
@@ -58,7 +60,7 @@ export class ContractController {
       Object.assign(filters, {
         $or: [
           {
-            ref: { $regex: new RegExp(searchValue), $options: 'i' },
+            ref: { $regex: `.*${searchValue}.*`, $options: 'i' },
           },
         ],
       });
