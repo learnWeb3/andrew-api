@@ -4,7 +4,7 @@ import * as mqtt from 'mqtt';
 import { hostname } from 'os';
 import { Subject, Subscription } from 'rxjs';
 import { DeviceStatus } from 'src/lib/interfaces/device-status.enum';
-import { NotificationType } from 'src/lib/interfaces/notification-type.enum';
+import { NotificationDocument } from 'src/notification/notification/notification.schemas';
 
 export interface MqttServiceOptions {
   clientId: string;
@@ -28,14 +28,14 @@ export class MqttService {
     this.subject.next(message);
   }
 
-  public async emitSupervisorNotification(message: { type: NotificationType }) {
+  public async emitSupervisorNotification(message: NotificationDocument) {
     this.emit({
       topic: `source/frontend/supervisor/notification`,
       payload: JSON.stringify(message),
     });
   }
 
-  public async emitAdminNotification(message: { type: NotificationType }) {
+  public async emitAdminNotification(message: NotificationDocument) {
     this.emit({
       topic: `source/frontend/admin/notification`,
       payload: JSON.stringify(message),
@@ -44,7 +44,7 @@ export class MqttService {
 
   public async emitCustomerNotification(
     oauthId: string,
-    message: { type: NotificationType },
+    message: NotificationDocument,
   ) {
     this.emit({
       topic: `source/frontend/users/${oauthId}/notification`,
