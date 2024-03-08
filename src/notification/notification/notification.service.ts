@@ -106,7 +106,7 @@ export class NotificationService {
       accessibleBy: KeycloakAvailableRoles.USER,
     });
     newNotification = await newNotification.save();
-    const customerIds = [];
+    const customerIds = createNotificationDto.receivers;
     const oauthReveivers: string[] = await this.customerService
       .findAll(
         {
