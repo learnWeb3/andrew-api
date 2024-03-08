@@ -47,25 +47,27 @@ export class CustomerController {
     @SortFiltered() sortFilters: SortFilters,
   ) {
     const filters = {
-      $or: [
-        { insurer: true },
-        {
-          fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
-        },
-        {
-          firstName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
-        },
-        {
-          lastName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
-        },
-        {
-          'contactInformations.email': {
-            $regex: `^.*${searchValue}.*$`,
-            $options: 'i',
-          },
-        },
-      ],
+      insurer: true,
     };
+
+    if (searchValue) {
+      Object.assign(
+        {
+          $or: [
+            {
+              fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
+            },
+            {
+              'contactInformations.email': {
+                $regex: `^.*${searchValue}.*$`,
+                $options: 'i',
+              },
+            },
+          ],
+        },
+        searchValue,
+      );
+    }
 
     return this.customerService.findAll(filters, pagination, sortFilters);
   }
@@ -81,25 +83,27 @@ export class CustomerController {
     @SortFiltered() sortFilters: SortFilters,
   ) {
     const filters = {
-      $or: [
-        { insurer: false },
-        {
-          fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
-        },
-        {
-          firstName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
-        },
-        {
-          lastName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
-        },
-        {
-          'contactInformations.email': {
-            $regex: `^.*${searchValue}.*$`,
-            $options: 'i',
-          },
-        },
-      ],
+      insurer: false,
     };
+
+    if (searchValue) {
+      Object.assign(
+        {
+          $or: [
+            {
+              fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
+            },
+            {
+              'contactInformations.email': {
+                $regex: `^.*${searchValue}.*$`,
+                $options: 'i',
+              },
+            },
+          ],
+        },
+        searchValue,
+      );
+    }
 
     return this.customerService.findAll(filters, pagination, sortFilters);
   }
