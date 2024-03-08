@@ -303,7 +303,7 @@ export class CustomerController {
       ? { accessibleBy: KeycloakAvailableRoles.INSURER }
       : {
           accessibleBy: KeycloakAvailableRoles.USER,
-          receivers: user.authorizationServerUserId,
+          receivers: user._id,
         };
 
     return this.customerService.findOneNotifications(
