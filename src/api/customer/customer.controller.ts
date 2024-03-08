@@ -51,22 +51,19 @@ export class CustomerController {
     };
 
     if (searchValue) {
-      Object.assign(
-        {
-          $or: [
-            {
-              fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
+      Object.assign(filters, {
+        $or: [
+          {
+            fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
+          },
+          {
+            'contactInformations.email': {
+              $regex: `^.*${searchValue}.*$`,
+              $options: 'i',
             },
-            {
-              'contactInformations.email': {
-                $regex: `^.*${searchValue}.*$`,
-                $options: 'i',
-              },
-            },
-          ],
-        },
-        searchValue,
-      );
+          },
+        ],
+      });
     }
 
     return this.customerService.findAll(filters, pagination, sortFilters);
@@ -87,22 +84,19 @@ export class CustomerController {
     };
 
     if (searchValue) {
-      Object.assign(
-        {
-          $or: [
-            {
-              fullName: { $regex: `.*${searchValue}.*`, $options: 'i' },
+      Object.assign(filters, {
+        $or: [
+          {
+            fullName: { $regex: `.*${searchValue}.*`, $options: 'i' },
+          },
+          {
+            'contactInformations.email': {
+              $regex: `.*${searchValue}.*`,
+              $options: 'i',
             },
-            {
-              'contactInformations.email': {
-                $regex: `.*${searchValue}.*`,
-                $options: 'i',
-              },
-            },
-          ],
-        },
-        filters,
-      );
+          },
+        ],
+      });
     }
 
     console.log('===> filters', filters);
