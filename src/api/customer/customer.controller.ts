@@ -101,7 +101,7 @@ export class CustomerController {
             },
           ],
         },
-        searchValue,
+        filters,
       );
     }
 
