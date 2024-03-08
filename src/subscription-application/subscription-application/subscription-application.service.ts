@@ -555,12 +555,14 @@ export class SubscriptionApplicationService {
               receivers: [subscriptionApplication.customer],
               data,
             });
+            break;
           case SubscriptionApplicationStatus.TO_AMMEND:
             await this.notificationService.createCustomerNotification({
               type: NotificationType.SUBSCRIPTION_APPLICATION_STATUS_TO_AMMEND,
               receivers: [subscriptionApplication.customer],
               data,
             });
+            break;
           default:
             console.log(
               `notification not handled for status ${updateSubscriptionApplicationStatusDto.status}`,

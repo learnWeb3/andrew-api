@@ -25,6 +25,7 @@ export class MqttService {
   }
 
   private emit(message: { topic: string; payload: string | Buffer }) {
+    console.log(`===> sending message through mqtt topic ${message.topic}`);
     this.subject.next(message);
   }
 
