@@ -50,17 +50,17 @@ export class CustomerController {
       $or: [
         { insurer: true },
         {
-          fullName: { $regex: new RegExp(searchValue), $options: 'i' },
+          fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
         },
         {
-          firstName: { $regex: new RegExp(searchValue), $options: 'i' },
+          firstName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
         },
         {
-          lastName: { $regex: new RegExp(searchValue), $options: 'i' },
+          lastName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
         },
         {
           'contactInformations.email': {
-            $regex: new RegExp(searchValue),
+            $regex: `^.*${searchValue}.*$`,
             $options: 'i',
           },
         },
@@ -84,17 +84,17 @@ export class CustomerController {
       $or: [
         { insurer: false },
         {
-          fullName: { $regex: new RegExp(searchValue), $options: 'i' },
+          fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
         },
         {
-          firstName: { $regex: new RegExp(searchValue), $options: 'i' },
+          firstName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
         },
         {
-          lastName: { $regex: new RegExp(searchValue), $options: 'i' },
+          lastName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
         },
         {
           'contactInformations.email': {
-            $regex: new RegExp(searchValue),
+            $regex: `^.*${searchValue}.*$`,
             $options: 'i',
           },
         },

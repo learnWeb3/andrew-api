@@ -50,7 +50,7 @@ export class DeviceController {
       {
         ...queryFilters,
         ...statusFilters,
-        serialNumber: { $regex: new RegExp(searchValue), $options: 'i' },
+        serialNumber: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
       },
       pagination,
       sortFilters,
