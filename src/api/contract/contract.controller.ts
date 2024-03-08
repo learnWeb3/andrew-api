@@ -58,7 +58,7 @@ export class ContractController {
       Object.assign(filters, {
         $or: [
           {
-            ref: { $regex: new RegExp(searchValue), $options: 'i' },
+            ref: { $regex: `.*${searchValue}.*`, $options: 'i' },
           },
         ],
       });
