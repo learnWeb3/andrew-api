@@ -91,11 +91,11 @@ export class CustomerController {
         {
           $or: [
             {
-              fullName: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
+              fullName: { $regex: `.*${searchValue}.*`, $options: 'i' },
             },
             {
               'contactInformations.email': {
-                $regex: `^.*${searchValue}.*$`,
+                $regex: `.*${searchValue}.*`,
                 $options: 'i',
               },
             },
@@ -104,6 +104,8 @@ export class CustomerController {
         filters,
       );
     }
+
+    console.log('===> filters', filters);
 
     return this.customerService.findAll(filters, pagination, sortFilters);
   }
