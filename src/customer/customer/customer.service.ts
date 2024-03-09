@@ -236,7 +236,7 @@ export class CustomerService implements MongooseJoinable {
     createThirdPartyAccountDto: CreateThirdPartyAccountDto,
   ) {
     const exists = await this.exists({
-      email: createThirdPartyAccountDto.email,
+      'contactInformations.email': createThirdPartyAccountDto.email,
     });
     if (exists) {
       throw new ConflictException(`account already exists`);
