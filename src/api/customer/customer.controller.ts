@@ -152,13 +152,24 @@ export class CustomerController {
   @Get(':id/contract')
   findOneContracts(
     @Param('id') customerId: string,
+    @SearchValue() searchValue: string,
     @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @Paginated() pagination: Pagination,
     @SortFiltered() sortFilters: SortFilters,
   ) {
+    const filters = { ...queryFilters, customer: customerId };
+    if (searchValue) {
+      Object.assign(filters, {
+        $or: [
+          {
+            ref: { $regex: `.*${searchValue}.*`, $options: 'i' },
+          },
+        ],
+      });
+    }
     return this.customerService.findOneContracts(
       customerId,
-      { ...queryFilters, customer: customerId },
+      filters,
       pagination,
       sortFilters,
     );
@@ -187,6 +198,7 @@ export class CustomerController {
   @Get(':id/vehicle')
   findOneVehicles(
     @Param('id') customerId: string,
+    @SearchValue() searchValue: string,
     @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @Paginated() pagination: Pagination,
     @SortFiltered() sortFilters: SortFilters,
@@ -222,13 +234,19 @@ export class CustomerController {
   @Get(':id/device')
   findOneDevices(
     @Param('id') customerId: string,
+    @SearchValue() searchValue: string,
     @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @Paginated() pagination: Pagination,
     @SortFiltered() sortFilters: SortFilters,
   ) {
+    const filters = {
+      ...queryFilters,
+      customer: customerId,
+      serialNumber: { $regex: `^.*${searchValue}.*$`, $options: 'i' },
+    };
     return this.customerService.findOneDevices(
       customerId,
-      { ...queryFilters, customer: customerId },
+      filters,
       pagination,
       sortFilters,
     );
@@ -259,11 +277,18 @@ export class CustomerController {
     @Param('id') customerId: string,
     @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @Paginated() pagination: Pagination,
+    @SearchValue() searchValue: string,
     @SortFiltered() sortFilters: SortFilters,
   ) {
+    const filters = { ...queryFilters, customer: customerId };
+    if (searchValue) {
+      Object.assign(filters, {
+        ref: { $regex: `.*${searchValue}.*`, $options: 'i' },
+      });
+    }
     return this.customerService.findOneSubscriptionApplications(
       customerId,
-      { ...queryFilters, customer: customerId },
+      filters,
       pagination,
       sortFilters,
     );
