@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PrivateApiModule } from './private-api/private-api.module';
 import { MqttModule } from './mqtt/mqtt.module';
+import { hostname } from 'os';
 
 @Module({
   imports: [
@@ -12,7 +13,10 @@ import { MqttModule } from './mqtt/mqtt.module';
     MongooseModule.forRoot(process.env.MONGO_URI),
     PrivateApiModule,
     MqttModule.register({
-      clientId: 'private-andrew-api',
+      clientId:
+        process.env.NODE_ENV !== 'production'
+          ? 'private-andrew-api' + '_' + hostname()
+          : 'private-andrew-api',
     }),
   ],
   controllers: [],

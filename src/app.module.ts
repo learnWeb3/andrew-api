@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { KafkaConsumerModule } from './kafka-consumer/kafka-consumer.module';
 import { MqttModule } from './mqtt/mqtt.module';
+import { hostname } from 'os';
 
 @Module({
   imports: [
@@ -14,7 +15,10 @@ import { MqttModule } from './mqtt/mqtt.module';
     ApiModule,
     KafkaConsumerModule,
     MqttModule.register({
-      clientId: 'public-andrew-api',
+      clientId:
+        process.env.NODE_ENV !== 'production'
+          ? 'public-andrew-api' + '_' + hostname()
+          : 'public-andrew-api',
     }),
   ],
   controllers: [],
