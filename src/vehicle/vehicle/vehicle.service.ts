@@ -90,19 +90,6 @@ export class VehicleService implements MongooseJoinable {
           },
         },
         {
-          $lookup: {
-            from: this.customerService.getCollectionName(),
-            localField: 'customer',
-            foreignField: '_id',
-            as: 'customers',
-          },
-        },
-        {
-          $addFields: {
-            customer: { $arrayElemAt: ['$customers', 0] },
-          },
-        },
-        {
           $sort: {
             [sortFilters.sort]: sortFilters.order,
           },
