@@ -15,6 +15,7 @@ import {
   DeviceSessionSchema,
 } from 'src/device-session/device-session/device-session.schemas';
 import { CustomerModule } from 'src/customer/customer.module';
+import { ContractModule } from 'src/contract/contract.module';
 
 @Module({
   providers: [DeviceService],
@@ -44,6 +45,7 @@ import { CustomerModule } from 'src/customer/customer.module';
     forwardRef(() => KeycloakModule),
     forwardRef(() => VehicleModule),
     forwardRef(() => CustomerModule),
+    forwardRef(() => ContractModule),
   ],
   exports: [DeviceService],
 })

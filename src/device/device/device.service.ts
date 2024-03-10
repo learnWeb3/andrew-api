@@ -25,6 +25,7 @@ import { DataScoring } from './data-scoring';
 import { DeviceSession } from 'src/device-session/device-session/device-session.schemas';
 import { EventCategory } from './event-category.enum';
 import { EventLevel } from './event-level.enum';
+import { ContractService } from 'src/contract/contract/contract.service';
 
 @Injectable()
 export class DeviceService implements MongooseJoinable {
@@ -45,6 +46,8 @@ export class DeviceService implements MongooseJoinable {
     private readonly customerService: CustomerService,
     @Inject(forwardRef(() => VehicleService))
     private readonly vehicleService: VehicleService,
+    @Inject(forwardRef(() => ContractService))
+    private readonly contractService: ContractService,
   ) {}
 
   getCollectionName(): string {
@@ -260,6 +263,15 @@ export class DeviceService implements MongooseJoinable {
       }
     }
 
+    if (updateDeviceDto.contract) {
+      const contractExists = await this.contractService.exists({
+        _id: updateDeviceDto.contract,
+      });
+      if (!contractExists) {
+        errors.push(`contract ${updateDeviceDto.contract} must exists`);
+      }
+    }
+
     if (!device) {
       errors.push(`device ${deviceId} must exists`);
     }
@@ -270,7 +282,11 @@ export class DeviceService implements MongooseJoinable {
     Object.assign(device, updateDeviceDto);
     let updatedDevice = await device.save();
 
-    if (updatedDevice.vehicle && updateDeviceDto.customer) {
+    if (
+      updatedDevice.vehicle &&
+      updateDeviceDto.customer &&
+      updateDeviceDto.contract
+    ) {
       updatedDevice.status = DeviceStatus.PAIRED;
       updatedDevice.pairingDate = new Date();
       updatedDevice = await updatedDevice.save();
