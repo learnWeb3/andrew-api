@@ -42,8 +42,10 @@ import {
   StatusFilters,
 } from 'src/lib/decorators/status-filters.decorators';
 import { SearchValue } from 'src/lib/decorators/search-value.decorators';
+import { ApiTags } from '@nestjs/swagger';
 
 @UseGuards(KeycloakAuthGuard)
+@ApiTags('subscription-application')
 @Controller('api/subscription-application')
 export class SubscriptionApplicationController {
   constructor(

@@ -1,4 +1,5 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import {
   KeycloakAuthGuard,
   KeycloakAvailableRoles,
@@ -10,6 +11,7 @@ import { RectrictObjectStorageDownloadUrlGuard } from 'src/lib/guards/restrict-o
 import { ObjectStorageService } from 'src/object-storage/object-storage/object-storage.service';
 
 @UseGuards(KeycloakAuthGuard)
+@ApiTags('object-storage')
 @Controller('api/object-storage')
 export class ObjectStorageController {
   constructor(private readonly objectStorageService: ObjectStorageService) {}

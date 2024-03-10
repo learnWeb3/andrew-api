@@ -7,6 +7,7 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { DeviceService } from 'src/device/device/device.service';
 import {
   KeycloakAuthGuard,
@@ -29,6 +30,7 @@ import { UpdateDeviceDto } from 'src/lib/dto/update-device.dto';
 import { DeviceStatus } from 'src/lib/interfaces/device-status.enum';
 
 @UseGuards(KeycloakAuthGuard)
+@ApiTags('device')
 @Controller('api/device')
 export class DeviceController {
   constructor(private readonly deviceService: DeviceService) {}

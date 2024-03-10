@@ -33,7 +33,9 @@ import { UpdateCustomerDto } from 'src/lib/dto/update-customer.dto';
 import { CreateThirdPartyAccountDto } from 'src/lib/dto/create-third-party-account.dto';
 import { SearchValue } from 'src/lib/decorators/search-value.decorators';
 import { CustomerDocument } from 'src/customer/customer/customer.schemas';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('customer')
 @Controller('api/customer')
 export class CustomerController {
   constructor(private readonly customerService: CustomerService) {}
