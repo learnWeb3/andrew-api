@@ -38,6 +38,7 @@ export class DeviceController {
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
     KeycloakAvailableRoles.SUPERADMIN,
+    KeycloakAvailableRoles.USER,
   ])
   @Get('')
   findAll(
@@ -62,6 +63,7 @@ export class DeviceController {
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
     KeycloakAvailableRoles.SUPERADMIN,
+    KeycloakAvailableRoles.USER,
   ])
   @Get(':id')
   findOne(@Param('id') deviceId: string) {
