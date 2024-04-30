@@ -39,13 +39,18 @@ export class VehicleController {
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
     KeycloakAvailableRoles.SUPERADMIN,
+    KeycloakAvailableRoles.USER,
   ])
   @Get('')
   findAll(
+    @KeycloakRolesMongoQueryFilters() queryFilters: Record<string, any>,
     @Paginated() pagination: Pagination,
     @SortFiltered() sortFilters: SortFilters,
   ) {
-    return this.vehicleService.findAll({}, pagination, sortFilters);
+    const filters = {
+      ...queryFilters,
+    };
+    return this.vehicleService.findAll(filters, pagination, sortFilters);
   }
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
