@@ -38,6 +38,8 @@ import { SubscriptionApplicationStatus } from 'src/lib/interfaces/subscription-a
 import { ContractService } from 'src/contract/contract/contract.service';
 import { ContractStatus } from 'src/lib/interfaces/contract-status.enum';
 import { DriverBehaviourClassInt } from 'src/lib/interfaces/driver-behaviour-class-int.enum';
+import { NotificationService } from 'src/notification/notification/notification.service';
+import { NotificationType } from 'src/lib/interfaces/notification-type.enum';
 
 @Injectable()
 export class KafkaConsumerService {
@@ -62,6 +64,8 @@ export class KafkaConsumerService {
     private drivingSessionService: DrivingSessionService,
     @Inject(forwardRef(() => MqttService))
     private mqttService: MqttService,
+    @Inject(forwardRef(() => NotificationService))
+    private notificationService: NotificationService,
   ) {
     this.ecommerceClient = new Kafka({
       clientId: process.env.KAFKA_CLIENT_ID + '_' + hostname(),
@@ -275,6 +279,13 @@ export class KafkaConsumerService {
                 case AndrewDeviceEventType.DRIVING_SESSION_END:
                   const andrewDeviceDrivingSessionEndEvent: AndrewDeviceDrivingSessionEndEvent =
                     andrewDeviceEvent as AndrewDeviceDrivingSessionEndEvent;
+                  const drivingSessionEndDevice =
+                    (await this.deviceService.findOne(
+                      {
+                        _id: andrewDeviceDrivingSessionEndEvent.data.device,
+                      },
+                      ['vehicle'],
+                    )) as DeviceDocument & { vehicle: VehicleDocument };
                   await this.drivingSessionService.handleSessionEnd(
                     andrewDeviceDrivingSessionEndEvent.subject,
                   );
@@ -335,6 +346,13 @@ export class KafkaConsumerService {
                     andrewDeviceDrivingSessionEndEvent.data.vehicle,
                     reportDocument,
                   );
+                  // dispatch new report notification
+
+                  await this.notificationService.createCustomerNotification({
+                    type: NotificationType.NEW_DEVICE_METRICS_REPORT_AVAILABLE,
+                    receivers: [drivingSessionEndDevice.customer],
+                    data: reportDocument,
+                  });
                   break;
                 case AndrewDeviceEventType.VEHICLE_VIN:
                   break;

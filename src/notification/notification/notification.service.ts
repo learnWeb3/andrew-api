@@ -98,6 +98,7 @@ export class NotificationService {
         | NotificationType.SUBSCRIPTION_APPLICATION_STATUS_PAYMENT_PENDING
         | NotificationType.SUBSCRIPTION_APPLICATION_STATUS_REJECTED
         | NotificationType.SUBSCRIPTION_APPLICATION_STATUS_TO_AMMEND
+        | NotificationType.NEW_DEVICE_METRICS_REPORT_AVAILABLE
       >;
     },
   ): Promise<{ _id: string }> {
