@@ -26,6 +26,61 @@ async function bootstrap() {
     .setTitle('Andrew API')
     .setDescription('The Andrew Insurance product main PUBLIC API.')
     .setVersion('1.0')
+    .addBearerAuth(
+      {
+        description:
+          'Any (roles.user, roles.superadmin, roles.insurer) oauth2 role based access through JWT access token',
+        type: 'http',
+        in: 'header',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+      'Any Role RBAC JWT access token',
+    )
+    .addBearerAuth(
+      {
+        description:
+          'Supervisor or Superadmin (roles.superadmin, roles.insurer) oauth2 role based access through JWT access token',
+        type: 'http',
+        in: 'header',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+      'Supervisor or Superadmin Role RBAC JWT access token',
+    )
+    .addBearerAuth(
+      {
+        description:
+          'Supervisor (roles.supervisor) oauth2 role based access through JWT access token',
+        type: 'http',
+        in: 'header',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+      'Supervisor Role RBAC JWT access token',
+    )
+    .addBearerAuth(
+      {
+        description:
+          'Superadmin (roles.superadmin) oauth2 role based access through JWT access token',
+        type: 'http',
+        in: 'header',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+      'Superadmin Role RBAC JWT access token',
+    )
+    .addBearerAuth(
+      {
+        description:
+          'User (roles.user) oauth2 role based access through JWT access token',
+        type: 'http',
+        in: 'header',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+      'User Role RBAC JWT access token',
+    )
     .build();
 
   const publicDocument = SwaggerModule.createDocument(app, publicAppConfig);

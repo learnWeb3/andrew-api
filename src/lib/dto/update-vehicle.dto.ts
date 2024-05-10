@@ -1,8 +1,10 @@
 import { IsNotEmpty, IsOptional, IsString, Matches } from 'class-validator';
 import { CreateVehicleDto } from './create-vehicle.dto';
 import { PartialType } from '@nestjs/mapped-types';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class UpdateVehicleDto extends PartialType(CreateVehicleDto) {
+  @ApiPropertyOptional({ format: '/vehicle/driver-license/.*' })
   @IsOptional()
   @IsNotEmpty()
   @IsString()
@@ -12,6 +14,7 @@ export class UpdateVehicleDto extends PartialType(CreateVehicleDto) {
   })
   driverLicenceDocURL: string;
 
+  @ApiPropertyOptional({ format: '/vehicle/registration-card/.*' })
   @IsOptional()
   @IsNotEmpty()
   @IsString()

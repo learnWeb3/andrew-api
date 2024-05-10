@@ -174,11 +174,4 @@ const SubscriptionApplicationSchema = SchemaFactory.createForClass(
   SubscriptionApplication,
 );
 
-SubscriptionApplicationSchema.index(
-  {
-    'vehciles.vin': 1,
-  },
-  { unique: true },
-);
-
 export { SubscriptionApplicationSchema };

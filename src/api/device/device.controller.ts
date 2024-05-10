@@ -7,7 +7,12 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiQuery,
+  ApiTags,
+} from '@nestjs/swagger';
 import { DeviceService } from 'src/device/device/device.service';
 import {
   KeycloakAuthGuard,
@@ -35,6 +40,48 @@ import { DeviceStatus } from 'src/lib/interfaces/device-status.enum';
 export class DeviceController {
   constructor(private readonly deviceService: DeviceService) {}
 
+  @ApiOperation({
+    summary: 'Get a paginated list of devices',
+    description:
+      'Result is scoped to the user owned devices if user has a user role',
+  })
+  @ApiBearerAuth('Any Role RBAC JWT access token')
+  @ApiQuery({
+    name: 'start',
+    type: String,
+    required: false,
+    description: 'pagination start query parameter',
+  })
+  @ApiQuery({
+    name: 'end',
+    type: String,
+    required: false,
+    description: 'pagination end query parameter',
+  })
+  @ApiQuery({
+    name: 'sort',
+    type: String,
+    required: false,
+    description: 'sort field',
+  })
+  @ApiQuery({
+    name: 'order',
+    enum: [-1, 1, 'asc', 'ascending', 'desc', 'descending'],
+    required: false,
+    description: 'sort order',
+  })
+  @ApiQuery({
+    name: 'status',
+    enum: DeviceStatus,
+    required: false,
+    description: 'resource status',
+  })
+  @ApiQuery({
+    name: 'value',
+    type: String,
+    required: false,
+    description: 'search value',
+  })
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
     KeycloakAvailableRoles.SUPERADMIN,
@@ -60,6 +107,12 @@ export class DeviceController {
     );
   }
 
+  @ApiOperation({
+    summary: 'Get device detail',
+    description:
+      'Result is scoped to the user owned devices if user has a user role',
+  })
+  @ApiBearerAuth('Any Role RBAC JWT access token')
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
     KeycloakAvailableRoles.SUPERADMIN,
@@ -75,12 +128,22 @@ export class DeviceController {
     );
   }
 
+  @ApiOperation({
+    summary: 'Create a device',
+    description: 'Only superadmin can create new devices',
+  })
+  @ApiBearerAuth('Superadmin Role RBAC JWT access token')
   @KeycloakRoles([KeycloakAvailableRoles.SUPERADMIN])
   @Post('')
   create(@Body() createDeviceDto: CreateDeviceDto) {
     return this.deviceService.create(createDeviceDto);
   }
 
+  @ApiOperation({
+    summary: 'Disable a device',
+    description: 'Only superadmin and insurer can disable a device',
+  })
+  @ApiBearerAuth('Supervisor or Superadmin Role RBAC JWT access token')
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
     KeycloakAvailableRoles.SUPERADMIN,
@@ -90,6 +153,11 @@ export class DeviceController {
     return this.deviceService.disable(deviceId);
   }
 
+  @ApiOperation({
+    summary: 'Update a device attributes',
+    description: 'Only superadmin and insurer can update a device attributes',
+  })
+  @ApiBearerAuth('Supervisor or Superadmin Role RBAC JWT access token')
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
     KeycloakAvailableRoles.SUPERADMIN,

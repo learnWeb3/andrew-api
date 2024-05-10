@@ -1,5 +1,5 @@
 import { Controller, Inject, Post, forwardRef } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ContractService } from 'src/contract/contract/contract.service';
 
 @ApiTags('contract-discount')
@@ -10,6 +10,10 @@ export class ContractDiscountController {
     private readonly contractService: ContractService,
   ) {}
 
+  @ApiOperation({
+    summary:
+      'Handle contract discount apply, analyses all active contracts and set up the discount in the ecommerce webservice',
+  })
   @Post('')
   async handleContractDiscounts() {
     const currentDate: Date = new Date();

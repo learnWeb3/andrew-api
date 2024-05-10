@@ -10,54 +10,66 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class UpdateContactInformationsDto {
+  @ApiPropertyOptional()
   @IsOptional()
   @IsPhoneNumber()
   phoneNumber?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsEmail()
   email?: string;
 }
 
 export class UpdateBillingInformationDto {
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   lastName?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   firstName?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   company?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   address?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsPostalCode('FR')
   postCode?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   city?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   country?: string;
 }
 
 export class UpdatePaymentInformationDto {
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   ecommerceCustomer: string;
 }
 
 export class UpdateIdentityDocsDto {
+  @ApiPropertyOptional({ format: '/customer/identity-id-card/.*' })
   @IsOptional()
   @Matches(/^customer\/identity\/id\-card\/.*/, {
     message:
@@ -65,6 +77,7 @@ export class UpdateIdentityDocsDto {
   })
   idCardDocURL?: string;
 
+  @ApiPropertyOptional({ format: '/customer/identity-residency-proof/.*' })
   @IsOptional()
   @Matches(/^customer\/identity\/residency\-proof\/.*/, {
     message:
@@ -74,6 +87,7 @@ export class UpdateIdentityDocsDto {
 }
 
 export class UpdatePaymentDocDto {
+  @ApiPropertyOptional({ format: '/customer/payments-terms-of-sales/.*' })
   @IsOptional()
   @Matches(/^customer\/payments\/terms\-of\-sales\/.*/, {
     message:
@@ -83,26 +97,31 @@ export class UpdatePaymentDocDto {
 }
 
 export class UpdateCustomerDto extends PartialType(CreateCustomerDto) {
+  @ApiPropertyOptional({ type: UpdateContactInformationsDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => UpdateContactInformationsDto)
   contactInformations: Partial<UpdateContactInformationsDto>;
 
+  @ApiPropertyOptional({ type: UpdateBillingInformationDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => UpdateBillingInformationDto)
   billingInformations: Partial<UpdateBillingInformationDto>;
 
+  @ApiPropertyOptional({ type: UpdatePaymentInformationDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => UpdatePaymentInformationDto)
   paymentInformations: Partial<UpdatePaymentInformationDto>;
 
+  @ApiPropertyOptional({ type: UpdateIdentityDocsDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => UpdateIdentityDocsDto)
   identityDocs: Partial<UpdateIdentityDocsDto>;
 
+  @ApiPropertyOptional({ type: UpdatePaymentDocDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => UpdatePaymentDocDto)

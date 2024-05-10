@@ -8,14 +8,17 @@ import {
   Matches,
 } from 'class-validator';
 import { ContractStatus } from '../interfaces/contract-status.enum';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class UpdateContractDto extends PartialType(CreateContractDto) {
+  @ApiPropertyOptional({ enum: ContractStatus })
   @IsOptional()
   @IsNotEmpty()
   @IsString()
   @IsEnum(ContractStatus)
   status: ContractStatus;
 
+  @ApiPropertyOptional({ format: '/contract/contract/.*' })
   @IsOptional()
   @IsNotEmpty()
   @IsString()

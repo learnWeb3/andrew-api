@@ -222,6 +222,17 @@ export class KafkaConsumerService {
                 | AndrewDeviceMetricEventData
               > = JSON.parse(message.value.toString());
 
+              const deviceObject = await this.deviceService.findOne({
+                _id: andrewDeviceEvent.subject,
+              });
+
+              if (!deviceObject) {
+                console.log(
+                  `event not handled for event subject ${andrewDeviceEvent.subject}`,
+                );
+                return;
+              }
+
               console.log(
                 `received device event ${JSON.stringify(
                   andrewDeviceEvent,

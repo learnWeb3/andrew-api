@@ -42,7 +42,12 @@ import {
   StatusFilters,
 } from 'src/lib/decorators/status-filters.decorators';
 import { SearchValue } from 'src/lib/decorators/search-value.decorators';
-import { ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiQuery,
+  ApiTags,
+} from '@nestjs/swagger';
 
 @UseGuards(KeycloakAuthGuard)
 @ApiTags('subscription-application')
@@ -52,6 +57,10 @@ export class SubscriptionApplicationController {
     private readonly subscriptionApplicationService: SubscriptionApplicationService,
   ) {}
 
+  @ApiOperation({
+    summary: 'Create a subscription application',
+  })
+  @ApiBearerAuth('User Role RBAC JWT access token')
   @KeycloakRoles([KeycloakAvailableRoles.USER])
   @Post('')
   register(
@@ -65,6 +74,11 @@ export class SubscriptionApplicationController {
     });
   }
 
+  @ApiOperation({
+    summary: 'Create a subscription application',
+    description: 'Endpoint is only accessible by suyperadmin and insurer users',
+  })
+  @ApiBearerAuth('Supervisor or Superadmin Role RBAC JWT access token')
   @KeycloakRoles([
     KeycloakAvailableRoles.SUPERADMIN,
     KeycloakAvailableRoles.INSURER,
@@ -78,6 +92,11 @@ export class SubscriptionApplicationController {
     );
   }
 
+  @ApiOperation({
+    summary: 'Update the status of a subscription application',
+    description: 'Status must be a valid next step according to the workflow',
+  })
+  @ApiBearerAuth('Any Role RBAC JWT access token')
   @RestrictForRoleAndResource({
     [KeycloakAvailableRoles.SUPERADMIN]: {
       [ResourceType.SUBSCRIPTION_APPLICATION]: async (model, request) =>
@@ -161,6 +180,12 @@ export class SubscriptionApplicationController {
     return this.subscriptionApplicationService.review(id);
   }
 
+  @ApiOperation({
+    summary: 'Update a subscription application fields',
+    description:
+      'Result is scoped to the user owned devices if user has a user role, subscription application must be in REVIEWING status for an insurer or superadmin and in PENDING or TO_AMMEND status for a customer',
+  })
+  @ApiBearerAuth('Any Role RBAC JWT access token')
   @RestrictForRoleAndResource({
     [KeycloakAvailableRoles.SUPERADMIN]: {
       [ResourceType.SUBSCRIPTION_APPLICATION]: async (model, request) =>
@@ -240,6 +265,13 @@ export class SubscriptionApplicationController {
     );
   }
 
+  @ApiOperation({
+    summary:
+      'Update the subscription application status (final state in the workflow)',
+    description:
+      'Endpoint is only accessible by superadmin and insurer user role, the subscription application status must be REVIEWING',
+  })
+  @ApiBearerAuth('Supervisor or Superadmin Role RBAC JWT access token')
   @RestrictForRoleAndResource({
     [KeycloakAvailableRoles.INSURER]: {
       [ResourceType.SUBSCRIPTION_APPLICATION]: async (model, request) =>
@@ -295,6 +327,48 @@ export class SubscriptionApplicationController {
     );
   }
 
+  @ApiOperation({
+    summary: 'Get a paginated list of subscription applications',
+    description:
+      'Result is scoped to the user owned subscription applications if user has a user role',
+  })
+  @ApiBearerAuth('Any Role RBAC JWT access token')
+  @ApiQuery({
+    name: 'start',
+    type: String,
+    required: false,
+    description: 'pagination start query parameter',
+  })
+  @ApiQuery({
+    name: 'end',
+    type: String,
+    required: false,
+    description: 'pagination end query parameter',
+  })
+  @ApiQuery({
+    name: 'sort',
+    type: String,
+    required: false,
+    description: 'sort field',
+  })
+  @ApiQuery({
+    name: 'order',
+    enum: [-1, 1, 'asc', 'ascending', 'desc', 'descending'],
+    required: false,
+    description: 'sort order',
+  })
+  @ApiQuery({
+    name: 'status',
+    enum: SubscriptionApplicationStatus,
+    required: false,
+    description: 'resource status',
+  })
+  @ApiQuery({
+    name: 'value',
+    type: String,
+    required: false,
+    description: 'search value',
+  })
   @KeycloakRoles([
     KeycloakAvailableRoles.SUPERADMIN,
     KeycloakAvailableRoles.INSURER,
@@ -325,6 +399,12 @@ export class SubscriptionApplicationController {
     );
   }
 
+  @ApiOperation({
+    summary: 'Get a subscription applications details',
+    description:
+      'Result is scoped to the user owned subscription applications if user has a user role',
+  })
+  @ApiBearerAuth('Any Role RBAC JWT access token')
   @RestrictForRoleAndResource({
     [KeycloakAvailableRoles.USER]: {
       [ResourceType.SUBSCRIPTION_APPLICATION]: async (model, request) =>

@@ -1,5 +1,5 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import {
   KeycloakAuthGuard,
   KeycloakAvailableRoles,
@@ -16,6 +16,10 @@ import { ObjectStorageService } from 'src/object-storage/object-storage/object-s
 export class ObjectStorageController {
   constructor(private readonly objectStorageService: ObjectStorageService) {}
 
+  @ApiOperation({
+    summary: 'Generate a presigned upload URL',
+  })
+  @ApiBearerAuth('Any Role RBAC JWT access token')
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
     KeycloakAvailableRoles.SUPERADMIN,
@@ -33,6 +37,12 @@ export class ObjectStorageController {
     );
   }
 
+  @ApiOperation({
+    summary: 'Generate a presigned download URL',
+    description:
+      'Result is scoped to user owned documents referenced inside databases collections, documents must exists if user has a user role',
+  })
+  @ApiBearerAuth('Any Role RBAC JWT access token')
   @UseGuards(RectrictObjectStorageDownloadUrlGuard)
   @KeycloakRoles([
     KeycloakAvailableRoles.INSURER,
